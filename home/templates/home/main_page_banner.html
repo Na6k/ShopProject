@@ -5,68 +5,38 @@
             <div class="col-xl-3 col-lg-4 d-none d-lg-block">
                 <div class="vertical-menu mb-all-30">
                     <nav>
-                        <ul class="vertical-menu-list">{% for name in names %}
-                            <li><a href="{% url 'group_page'%}" ><span><img src="{% static 'img/vertical-menu/1.png' %}" alt="menu-icon"></span>{{name.value}}{% comment "" %}Удилища{% endcomment %}<i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                        <ul class="vertical-menu-list">
+                            {% for name in names %}
+                            <li><a href="{% url 'group_page' name.value %}"><span><img src="{% static 'img/vertical-menu/1.png' %}" alt="menu-icon"></span>{{name.value}}<i class="fa fa-angle-right" aria-hidden="true"></i></a>
                                 <ul class="ht-dropdown mega-child">
-                                   {% for group in name.groups.all %}
-                                    <li><a href="{% comment "" %}{{name.get_absolute_url}}{% endcomment %}{% url 'manufacturer_page'%}">{{group.name}}<i class="fa fa-angle-right"></i></a>
+                                    {% for group in name.groups.all %}
+                                    <li><a href="{% url 'manufacturer_page' group.name%}">{{group.name}}<i class="fa fa-angle-right"></i></a>
+                                        
                                         <ul class="ht-dropdown mega-child">
-                                            <li><a href="{% url 'manufacturer_page'%}"><h6>Производители</h6></a></li>
+                                            <li><a href="{% url 'manufacturer_page' group.name%}"><h6>Производители</h6></a></li>
                                             <li><a href="{% url 'products_page'%}">Mikado</a></li>
-                                            <li><a href="shop.html">DOYO(ДоЮй)</a></li>
                                         </ul>
                                     </li>{% endfor %}
                                 </ul>
-                            </li> {% endfor %}{% comment "" %}
-                                    <li><a href="{% url 'manufacturer_page'%}">Болонские <i class="fa fa-angle-right"></i></a>
-                                        <ul class="ht-dropdown mega-child">
-                                            <li><a href="{% url 'manufacturer_page'%}"><h6>Производители</h6></a></li>
-                                            <li><a href="shop.html">Mikado</a></li>
-                                            <li><a href="shop.html">DOYO(ДоЮй)</a></li>
-                                            <li><a href="shop.html">Shimano</a></li>
-                                        </ul>
-                                    </li>                                            
-                                    <li><a href="{% url 'manufacturer_page'%}">Фидерные <i class="fa fa-angle-right"></i></a>
-                                        <ul class="ht-dropdown mega-child">
-                                            <li><a href="{% url 'manufacturer_page'%}"><h6>Производители</h6></a></li>
-                                            <li><a href="shop.html">SuperHard</a></li>
-                                            <li><a href="shop.html">Kaida</a></li>
-                                            <li><a href="shop.html">Akara</a></li>
-                                            <li><a href="shop.html">Fish2fish</a></li>
-                                            <li><a href="shop.html">Волжанка</a></li>
-                                            <li><a href="shop.html">Flagman</a></li>
-                                            <li><a href="shop.html">Mikado</a></li>
-                                            <li><a href="shop.html">Condor</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="{% url 'manufacturer_page'%}">Матчевые<i class="fa fa-angle-right"></i></a>
-                                        <ul class="ht-dropdown mega-child">
-                                                    <li><a href="{% url 'manufacturer_page'%}"><h6>Производители</h6></a></li>
-                                                    <li><a href="shop.html">Kaida</a></li>
-                                                    <li><a href="shop.html">Flagman</a></li>
-                                                    <li><a href="shop.html">DOYO(ДоЮй)</a></li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li><a href="shop.html"><span><img src="{% static 'img/vertical-menu/3.png' %}" alt="menu-icon"></span>Спиннинги<i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                            </li> {% endfor %}
+
+
+
+                            {% comment "" %}
+                            {% for name in names %}
+                            <li><a href="shop.html"><span><img src="{% static 'img/vertical-menu/3.png' %}" alt="menu-icon"></span>{{name.value}}<i class="fa fa-angle-right" aria-hidden="true"></i></a>
                                 <ul class="ht-dropdown megamenu first-megamenu">
                                     <li class="single-megamenu">
                                         <ul>
                                             <li class="menu-tile">Производители</li>
-                                            <li><a href="shop.html">Flagman</a></li>
-                                            <li><a href="shop.html">Akara</a></li>
-                                            <li><a href="shop.html">Shimano</a></li>
-                                            <li><a href="shop.html">DOYO(ДоЮй)</a></li>
-                                            <li><a href="shop.html">Kaida</a></li>
-                                            <li><a href="shop.html">Волжанка</a></li>
-                                            <li><a href="shop.html">Salmo</a></li>
-                                            <li><a href="shop.html">Lucky John</a></li>
+                                            {% for group in name.groups.all %}
+                                            <li><a href="shop.html">{{group.name}}</a></li>{% endfor %}
                                         </ul>
                                     </li>
                                 </ul>
-                            </li>
-                            <li><a href="shop.html"><span><img src="{% static 'img/vertical-menu/6.png' %}" alt="menu-icon"></span>Катушки<i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                            </li>{% endfor %}
+                            {% endcomment %}                                                        
+                            {% comment "" %}<li><a href="shop.html"><span><img src="{% static 'img/vertical-menu/6.png' %}" alt="menu-icon"></span>Катушки<i class="fa fa-angle-right" aria-hidden="true"></i></a>
                                 <ul class="ht-dropdown megamenu megamenu-two">
                                     <li class="single-megamenu">
                                         <ul>

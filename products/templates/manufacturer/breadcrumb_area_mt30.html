@@ -3,8 +3,10 @@
         <div class="breadcrumb">
             <ul class="d-flex align-items-center">
                 <li><a href="{% url 'home_page' %}">Главная</a></li>
-                <li><a href="{% url 'group_page' %}">Удилища</a></li>
-                <li class="active"><a href="{% url 'manufacturer_page' %}">Маховые</a></li>
+                {% for name in category %}
+                <li><a href="{% url 'group_page' name.value %}">{{name.value}}</a></li>
+                {% endfor %}
+                <li class="active"><a href="{% url 'manufacturer_page' current%}">{{current}}</a></li>
             </ul>
         </div>
     </div>

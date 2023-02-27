@@ -1,16 +1,17 @@
 from django.shortcuts import render, redirect
-from products.models import Names, Group
+from products.models import Names, Group, Manufacturer
 
 
 def home_page(request):
-    a = (
+    category = (
         Names.objects
         .filter(type = "C")
         .prefetch_related('groups')
         )
     
-
-    return render(request, 'home.html', {'names' : a})
+    #manufacturer = Manufacturer.objects.filter(id =  )
+    #print(manufacturer)
+    return render(request, 'home.html', {'names' : category})
 
 
 def contacts_page(request):

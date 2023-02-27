@@ -1,14 +1,37 @@
 from django.shortcuts import render
-from .models import Names, Products
+from .models import Names, Products, Group
 
 
-def group_page(request):
-    gr = Names.objects.filter(id__gte = 16, id__lte = 19)
-    return render(request, 'shop.html')
+def group_page(request, value):
+    category = (
+        Names.objects
+        .filter(type = "C")
+        .prefetch_related('groups')
+        )
+    group = (
+        Names.objects
+        .filter(value = value)
+        .prefetch_related('groups')
+        )
+
+    return render(request, 'group.html', {'names': category, 'current': value, 'group': group})
 
 
-def manufacturer_page(request):
-    return render(request, 'manufacturer.html',)
+def manufacturer_page(request, name):    
+    grou = (
+        Group.objects
+        .filter(name = name)
+        .prefetch_related('manufacturer')
+        )
+    category = (
+        Group.objects
+        .filter(name = name)
+        .values('names')
+        )
+    for el in category:
+        id_v = el
+    category = Names.objects.filter(pk = id_v['names']).values('value')
+    return render(request, 'manufacturer.html', {'grou':grou, "current": name, 'category':category})
 
 
 def products_page(request):

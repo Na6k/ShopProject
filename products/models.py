@@ -1,11 +1,21 @@
 from django.db import models
 from django.urls import reverse
 
+class Manufacturer(models.Model):
+    id = models.BigAutoField(primary_key=True)
+    name_man = models.CharField(max_length=100)
+    
+    def __str__(self):
+        return self.name_man
+    
+    class Meta:
+        db_table = 'manufacturer'
 
 class Group(models.Model):
     id = models.BigAutoField(primary_key=True)
     name = models.CharField(max_length=100)
-    
+    manufacturer = models.ManyToManyField(Manufacturer)
+
     def __str__(self):
         return self.name
     
@@ -13,15 +23,6 @@ class Group(models.Model):
         db_table = 'group'
 
 
-class Manufacturer(models.Model):
-    id = models.BigAutoField(primary_key=True)
-    m_name = models.CharField(max_length=100)
-    
-    def __str__(self):
-        return self.m_name
-    
-    class Meta:
-        db_table = 'manufacturer'
 
 class Names(models.Model):
     id = models.BigAutoField(primary_key=True)
@@ -29,16 +30,11 @@ class Names(models.Model):
     type = models.CharField(max_length=3)
     c_g = models.BigIntegerField(null=True)
     groups = models.ManyToManyField(Group)
-    manufacturers = models.ManyToManyField(Manufacturer)
+    #slug = models.SlugField(max_length=100,unique=True)
 
     def __str__(self):
         return self.value
     
-    #def get_absolute_url(self):
-    #    return reverse(
-    #        'names:groups',
-    #        args=[str(self.pk)]
-    #    )
 
     class Meta:
     #    managed = False
