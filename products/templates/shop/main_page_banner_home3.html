@@ -10,9 +10,9 @@
                             <li><a href="{% url 'group_page' name.value %}"><span><img src="{% static 'img/vertical-menu/1.png' %}" alt="menu-icon"></span>{{name.value}}<i class="fa fa-angle-right" aria-hidden="true"></i></a>
                                 <ul class="ht-dropdown mega-child">
                                    {% for group in name.groups.all %}
-                                    <li><a href="{% url 'manufacturer_page' group.name%}">{{group.name}}<i class="fa fa-angle-right"></i></a>
+                                    <li><a href="{% url 'manufacturer_page' name.value group.name%}">{{group.name}}<i class="fa fa-angle-right"></i></a>
                                         <ul class="ht-dropdown mega-child">
-                                            <li><a href="{% url 'manufacturer_page' group.name%}"><h6>Производители</h6></a></li>
+                                            <li><a href="{% url 'manufacturer_page' name.value group.name%}"><h6>Производители</h6></a></li>
                                             <li><a href="{% url 'products_page'%}">Mikado</a></li>
                                             <li><a href="shop.html">DOYO(ДоЮй)</a></li>
                                         </ul>
