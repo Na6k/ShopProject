@@ -2,14 +2,14 @@ from django.db import models
 from customer.models import Customer
 
 
-class Bascket(models.Model):
+class Cart(models.Model):
     id = models.BigAutoField(primary_key=True)
-    customer_id = models.ForeignKey(Customer, models.DO_NOTHING, related_name='customer')
+    customer = models.ForeignKey(Customer, models.DO_NOTHING, related_name='customer_id')
     products = models.JSONField()  # This field type is a guess.
 
     class Meta:
         #managed = False
-        db_table = 'bascket'
+        db_table = 'cart'
 
 
 
@@ -52,15 +52,15 @@ class Order(models.Model):
     ] 
 
     id = models.BigAutoField(primary_key=True)
-    bascket_id = models.ForeignKey(Bascket, models.DO_NOTHING, related_name='buscket')
+    card = models.ForeignKey(Cart, models.DO_NOTHING, related_name='card_id')
     full_price = models.BigIntegerField()
     status = models.CharField(max_length=1, choices=STATUS_CHOISES, default="P")
     order_time = models.DateTimeField(auto_now_add=True)
-    payment_type_id = models.ForeignKey(PaymentType, models.DO_NOTHING, related_name='payment_type_id')
+    payment_type = models.ForeignKey(PaymentType, models.DO_NOTHING, related_name='payment_type_id')
     delivery_type = models.CharField(max_length= 1, choices=DELIVERY_CHOISES, default="B")
 
     class Meta:
         #managed = False
-        db_table = 'order_'
+        db_table = 'order'
 
 # Create your models here.

@@ -56,8 +56,8 @@ class Products(models.Model):
     price = models.DecimalField(max_digits=8, decimal_places=2)
     amount = models.IntegerField(blank=True, null=True)  # add def validators if amount < 0 ValidationError !!!!
     category = models.ForeignKey(Names, models.DO_NOTHING, related_name='category_id')
-    group = models.ForeignKey(Names, models.DO_NOTHING, related_name='group_id')
-    manufacturer = models.ForeignKey(Names, models.DO_NOTHING, related_name='manufacturer_id')
+    group = models.ForeignKey(Group, models.DO_NOTHING, related_name='group_id')
+    manufacturer = models.ForeignKey(Manufacturer, models.DO_NOTHING, related_name='manufacturer_id')
     model = models.ForeignKey(Names, models.DO_NOTHING, related_name='model_id')
     images = models.ManyToManyField(Image)
 

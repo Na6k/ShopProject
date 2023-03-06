@@ -31,9 +31,10 @@
                         </div>
                     </div>
                 </div>
+                {% for el in about_prod %}
                 <div class="col-lg-7">
                     <div class="thubnail-desc fix">
-                        <h3 class="product-header">Faded Short Sleeves T-shirt</h3>
+                        <h3 class="product-header">{{el.product_name}}</h3>
                         <div class="rating-summary fix mtb-10">
                             <div class="rating">
                                 <i class="fa fa-star"></i>
@@ -48,9 +49,9 @@
                             </div>
                         </div>
                         <div class="pro-price mtb-30">
-                            <p class="d-flex align-items-center"><span class="prev-price">16.51</span><span class="price">$15.19</span><span class="saving-price">save 8%</span></p>
+                            <p class="d-flex align-items-center"><span class="prev-price">{{el.price}}</span><span class="price">{{el.price}}</span><span class="saving-price">save 8%</span></p>
                         </div>
-                        <p class="mb-20 pro-desc-details">Faded short sleeves t-shirt with high neckline. Soft and stretchy material for a comfortable fit. Accessorize with a straw hat and you're ready for summer!</p>
+                        <p class="mb-20 pro-desc-details">{{el.description}}</p>
                         <div class="product-size mb-20 clearfix">
                             <label>Size</label>
                             <select class="">
@@ -76,7 +77,7 @@
                             </form>
                             <div class="pro-actions">
                                 <div class="actions-primary">
-                                    <a href="{% url 'bascket_page'%}" title="" data-original-title="Add to Cart"> + Add To Cart</a>
+                                    <a href="{% url 'cart_page'%}" title="" data-original-title="Add to Cart"> + Add To Cart</a>
                                 </div>
                                 <div class="actions-secondary">
                                     <a href="compare.html" title="" data-original-title="Compare"><i class="lnr lnr-sync"></i> <span>Add To Compare</span></a>
@@ -97,7 +98,7 @@
                             </ul>
                         </div>
                     </div>
-                </div>
+                </div>{% endfor %}
             </div>
         </div>
     </div>

@@ -3,9 +3,9 @@
         <div class="breadcrumb">
             <ul class="d-flex align-items-center">
                 <li><a href="{% url 'home_page' %}">Главная</a></li>
-                <li><a href="{% comment "" %}{% url 'group_page' %}{% endcomment %}">Удилища</a></li>
-                <li ><a href="{% comment %}{% url 'manufacturer_page'%}{% endcomment %}">Произодитель</a></li>
-                <li class="active"><a href="{% url 'products_page'%}">Mikado</a></li>
+                <li><a href="{% url 'group_page' value%}">Удилища</a></li>
+                <li ><a href="{% url 'manufacturer_page' value name%}">Произодитель</a></li>
+                <li class="active"><a href="{% url 'products_page' value name manufacturer%}">{{manufacturer}}</a></li>
             </ul>
         </div>
     </div>

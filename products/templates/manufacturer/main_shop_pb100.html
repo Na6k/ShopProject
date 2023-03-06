@@ -21,18 +21,18 @@
                                 <div class="col-lg-4 col-md-4 col-sm-6 col-6">
                                     <div class="single-product">
                                         <div class="pro-img">
-                                            <a href="{% url 'products_page'%}">
+                                            <a href="{% url 'products_page' value current i.name_man%}">
                                                 <img class="primary-img" src="{% static 'img/products/1.jpg' %}" alt="single-product">
                                                 <img class="secondary-img" src="{% static 'img/products/2.jpg' %}" alt="single-product">
                                             </a>
                                         </div>
                                         <div class="pro-content">
                                             <div class="pro-info">
-                                                <h4><a href="{% url 'products_page'%}">{{i.name_man}}</a></h4>
+                                                <h4><a href="{% url 'products_page' value current i.name_man%}">{{i.name_man}}</a></h4>
                                             </div>
                                             <div class="pro-actions">
                                                 <div class="actions-primary">
-                                                    <a href="{% url 'products_page'%}">{{i.name_man}}</a>
+                                                    <a href="{% url 'products_page' value current i.name_man%}">{{i.name_man}}</a>
                                                 </div>
                                             </div>
                                         </div>

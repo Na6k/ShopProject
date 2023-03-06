@@ -8,7 +8,7 @@
         <div class="hot-deal-active owl-carousel">
             <div class="single-product">
                 <div class="pro-img">
-                    <a href="{% url 'product_page'%}">
+                    <a href="{% comment "" %}{% url 'product_page'%}{% endcomment %}">
                         <img class="primary-img" src="{% static 'img/products/1.jpg' %}" alt="single-product">
                         <img class="secondary-img" src="{% static 'img/products/7.jpg' %}" alt="single-product">
                     </a>
@@ -17,13 +17,13 @@
                 </div>
                 <div class="pro-content">
                     <div class="pro-info">
-                        <h4><a href="{% url 'product_page'%}l">Poly and Bark Vortex Side</a></h4>
+                        <h4><a href="{% comment "" %}{% url 'product_page'%}{% endcomment %}">Poly and Bark Vortex Side</a></h4>
                         <p><span class="price">$84.45</span><del class="prev-price">$105.50</del></p>
                         <div class="label-product l_sale">20<span class="symbol-percent">%</span></div>
                     </div>
                     <div class="pro-actions">
                         <div class="actions-primary">
-                            <a href="{% url 'bascket_page'%}" title="Add to Cart"> + Add To Cart</a>
+                            <a href="{% url 'cart_page'%}" title="Add to Cart"> + Add To Cart</a>
                         </div>
                         <div class="actions-secondary">
                             <a href="compare.html" title="Compare"><i class="lnr lnr-sync"></i> <span>Add To Compare</span></a>
@@ -32,7 +32,7 @@
                     </div>
                 </div>
             </div>
-            <div class="single-product">
+            {% comment "" %}<div class="single-product">
                 <div class="pro-img">
                     <a href="{% url 'product_page'%}l">
                         <img class="primary-img" src="{% static 'img/products/24.jpg' %}" alt="single-product">
@@ -49,7 +49,7 @@
                     </div>
                     <div class="pro-actions">
                         <div class="actions-primary">
-                            <a href="{% url 'bascket_page'%}" title="Add to Cart">+ Add To Cart</a>
+                            <a href="{% url 'cart_page'%}" title="Add to Cart">+ Add To Cart</a>
                         </div>
                         <div class="actions-secondary">
                             <a href="compare.html" title="Compare"><i class="lnr lnr-sync"></i> <span>Add To Compare</span></a>
@@ -75,7 +75,7 @@
                     </div>
                     <div class="pro-actions">
                         <div class="actions-primary">
-                            <a href="{% url 'bascket_page'%}" title="Add to Cart">+ Add To Cart</a>
+                            <a href="{% url '_page'%}" title="Add to Cart">+ Add To Cart</a>
                         </div>
                         <div class="actions-secondary">
                             <a href="compare.html" title="Compare"><i class="lnr lnr-sync"></i> <span>Add To Compare</span></a>
@@ -164,7 +164,7 @@
                     </div>
                 </div>
                 <span class="sticker-new">new</span>
-            </div>
+            </div>{% endcomment %}
         </div>
 
     </div>

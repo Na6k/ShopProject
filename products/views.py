@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Names, Products, Group
+from .models import Names, Products, Group, Manufacturer
 
 
 def group_page(request, value):
@@ -13,23 +13,71 @@ def group_page(request, value):
         .filter(value = value)
         .prefetch_related('groups')
         )
-    return render(request, 'group.html', {'names': category, 'current': value, 'group': group})
+    context = {'names': category, 
+               'current': value, 
+               'group': group}
+    return render(request, 'group.html', context=context)
 
 
-def manufacturer_page(request, value,name):    
+def manufacturer_page(request, value, name):   
+    category = (
+        Names.objects
+        .filter(type = "C")
+        .prefetch_related('groups')
+        ) 
     grou = (
         Group.objects
         .filter(name = name)
         .prefetch_related('manufacturer')
         )    
-    return render(request, 'manufacturer.html', {'grou':grou, "current": name, 'value': value})
+    context = {
+                'grou':grou, 
+                "current": name, 
+                'value': value, 
+                'names': category
+                }
+    return render(request, 'manufacturer.html', context=context)
 
 
-def products_page(request):
-    mikado = Products.objects.filter(category_id = 1, group_id = 16, manufacturer_id = 95)
-    return render(request, 'products.html', {'mikado': mikado})
+def products_page(request, value, name, manufacturer):
+    category = (
+        Names.objects
+        .filter(type = "C")
+        .prefetch_related('groups')
+        ) 
+    c_id = Names.objects.filter(value = value).values('id')
+    g_id = Group.objects.filter(name = name).values('id')
+    m_id = Manufacturer.objects.filter(name_man = manufacturer).values('id')
+    product = (Products.objects.filter(
+                                        category_id = c_id[0]['id'],
+                                        group_id = g_id[0]['id'], 
+                                        manufacturer_id = m_id[0]['id'])
+                                        )
+    context = {'mikado': product, 
+               'value':value, 
+               'name': name, 
+               'manufacturer':manufacturer, 
+               'names': category}
+    return render(request, 'products.html', context=context)
 
 
-def product_page(request):
-    return render(request, 'product.html')
+def product_page(request, name_gr, prod_name):
+    category = (
+        Names.objects
+        .filter(type = "C")
+        .prefetch_related('groups')
+        ) 
+    product = Group.objects.filter(name = name_gr).values('id')
+    about_prod = (
+                Products.objects
+                .filter(product_name = prod_name, group_id = product[0]['id'])
+                .select_related('category', 'group', 'manufacturer')
+                )
+    context = {
+        'names': category,
+        'prod_name':prod_name,
+        'about_prod':about_prod,
+        'name_gr': name_gr
+    }
+    return render(request, 'product.html', context=context)
 # Create your views here.

@@ -91,7 +91,7 @@
                                                 <span class="pro-quantity">1X</span>
                                             </div>
                                             <div class="cart-content">
-                                                <h6><a href="{% url 'product_page'%}">Printed Summer Red </a></h6>
+                                                <h6><a href="{% comment "" %}{% url 'product_page' value %}{% endcomment %}">Printed Summer Red </a></h6>
                                                 <span class="cart-price">27.45</span>
                                                 <span>Size: S</span>
                                                 <span>Color: Yellow</span>
@@ -104,7 +104,7 @@
                                                 <span class="pro-quantity">1X</span>
                                             </div>
                                             <div class="cart-content">
-                                                <h6><a href="{% url 'product_page'%}">Printed Round Neck</a></h6>
+                                                <h6><a href="{% comment "" %}{% url 'product_page' value %}{% endcomment %}">Printed Round Neck</a></h6>
                                                 <span class="cart-price">45.00</span>
                                                 <span>Size: XL</span>
                                                 <span>Color: Green</span>
@@ -151,9 +151,9 @@
                             </li>
                             <li><a {% comment "" %}href="shop.html"{% endcomment %}>shop<i class="fa fa-angle-down"></i></a>
                                 <ul class="ht-dropdown dropdown-style-two">
-                                    <li><a href="{% url 'product_page'%}">product details</a></li>
+                                    <li><a href="{% comment "" %}{% url 'product_page'%}{% endcomment %}">product details</a></li>
                                     <li><a href="compare.html">compare</a></li>
-                                    <li><a href="{% url 'bascket_page'%}">Корзина</a></li>
+                                    <li><a href="{% url 'cart_page'%}">Корзина</a></li>
                                     <li><a href="{% url 'checkout_page'%}">Оформление заказа</a></li>
                                     <li><a href="{% url 'wishlist_page'%}">Список пожеланий</a></li>
                                 </ul>
@@ -189,9 +189,9 @@
                                 </li>
                                 <li><a href="shop.html">shop</a>
                                     <ul>
-                                        <li><a href="{% url 'product_page'%}">product details</a></li>
+                                        <li><a href="{% comment "" %}{% url 'product_page'%}{% endcomment %}">product details</a></li>
                                         <li><a href="compare.html">compare</a></li>
-                                        <li><a href="{% url 'bascket_page'%}">Корзина</a></li>
+                                        <li><a href="{% url 'cart_page'%}">Корзина</a></li>
                                         <li><a href="{% url 'checkout_page'%}">Оформление заказа</a></li>
                                         <li><a href="{% url 'wishlist_page'%}">Список пожеланий</a></li>
                                     </ul>

@@ -13,8 +13,10 @@
                                     <li><a href="{% url 'manufacturer_page' name.value group.name%}">{{group.name}}<i class="fa fa-angle-right"></i></a>
                                         <ul class="ht-dropdown mega-child">
                                             <li><a href="{% url 'manufacturer_page' name.value group.name%}"><h6>Производители</h6></a></li>
-                                            <li><a href="{% url 'products_page'%}">Mikado</a></li>
-                                            <li><a href="shop.html">DOYO(ДоЮй)</a></li>
+                                            {% for i in group.manufacturer.all %}
+                                            <li><a href="{% url 'products_page' name.value group.name i.name_man%}">{{i.name_man}}</a></li>
+                                            {% endfor %}
+                                            
                                         </ul>
                                     </li>{% endfor %}
                                 </ul>

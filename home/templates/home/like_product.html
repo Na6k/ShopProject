@@ -7,7 +7,7 @@
                 <div class="double-product">
                     <div class="single-product">
                         <div class="pro-img">
-                            <a href="{% url 'product_page'%}">
+                            <a href="{% comment "" %}{% url 'product_page'%}{% endcomment %}">
                                 <img class="primary-img" src="{% static 'img/products/17.jpg' %}" alt="single-product">
                                 <img class="secondary-img" src="{% static 'img/products/18.jpg' %}" alt="single-product">
                             </a>
@@ -15,7 +15,7 @@
                         </div>
                         <div class="pro-content">
                             <div class="pro-info">
-                                <h4><a href="{% url 'product_page'%}">Flos Chasen S2 Suspension</a></h4>
+                                <h4><a href="{% comment "" %}{% url 'product_page'%}{% endcomment %}">Flos Chasen S2 Suspension</a></h4>
                                 <p><span class="price">$84.45</span><del class="prev-price">$105.50</del></p>
                                 <div class="label-product l_sale">20<span class="symbol-percent">%</span></div>
                             </div>
@@ -30,6 +30,7 @@
                             </div>
                         </div>
                     </div>
+                    {% comment "" %}
                     <div class="single-product">
                         <div class="pro-img">
                             <a href="{% url 'product_page'%}">
@@ -54,8 +55,9 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div>{% endcomment %}
                 </div>
+                {% comment "" %}
                 <div class="double-product">
                     <div class="single-product">
                         <div class="pro-img">
@@ -420,7 +422,7 @@
                         </div>
                         <span class="sticker-new">new</span>
                     </div>
-                </div>
+                </div>{% endcomment %}
             </div>
         </div>
     </div>

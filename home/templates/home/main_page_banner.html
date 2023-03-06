@@ -8,16 +8,22 @@
                         <ul class="vertical-menu-list">
                             {% for name in names %}
                             <li><a href="{% url 'group_page' name.value %}"><span><img src="{% static 'img/vertical-menu/1.png' %}" alt="menu-icon"></span>{{name.value}}<i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                                {% if name.groups %}
                                 <ul class="ht-dropdown mega-child">
                                     {% for group in name.groups.all %}
                                     <li><a href="{% url 'manufacturer_page' name.value group.name%}">{{group.name}}<i class="fa fa-angle-right"></i></a>
                                         
                                         <ul class="ht-dropdown mega-child">
                                             <li><a href="{% url 'manufacturer_page' name.value group.name%}"><h6>Производители</h6></a></li>
-                                            <li><a href="{% url 'products_page'%}">Mikado</a></li>
+
+                                            {% for i in group.manufacturer.all %}
+                                            <li><a href="{% url 'products_page' name.value group.name i.name_man%}">{{i.name_man}}</a></li>
+                                            {% endfor %}
+
                                         </ul>
                                     </li>{% endfor %}
                                 </ul>
+                                {% endif %}
                             </li> {% endfor %}
 
 

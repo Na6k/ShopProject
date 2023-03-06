@@ -8,9 +8,6 @@ def home_page(request):
         .filter(type = "C")
         .prefetch_related('groups')
         )
-    
-    #manufacturer = Manufacturer.objects.filter(id =  )
-    #print(manufacturer)
     return render(request, 'home.html', {'names' : category})
 
 
@@ -20,8 +17,13 @@ def contacts_page(request):
 
 
 def about_page(request):
+    category = (
+        Names.objects
+        .filter(type = "C")
+        .prefetch_related('groups')
+        )
     print(request.GET)
-    return render(request, 'about.html')
+    return render(request, 'about.html', {'names': category})
 
 
 def pageNotFound(request, exception):
