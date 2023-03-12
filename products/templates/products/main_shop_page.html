@@ -57,13 +57,17 @@
                                             </div>
                                             <div class="pro-actions">
                                                 <div class="actions-primary">
-                                                        <a href="{% url 'cart_add' el.id%}", method='post', title="Add to Cart">+ Add To Cart</a>
+                                                    <form action="{% url 'cart_add' el.id%}" method='post', title="В корзину">
+                                                        {{cart_form}}
+                                                        {% csrf_token %}
+                                                        
+                                                        <input type='submit' value="Добавить в корзину">
                                                     </form>    
                                                 </div>
-                                                <div class="actions-secondary">
+                                                {% comment "" %}<div class="actions-secondary">
                                                     <a href="compare.html" title="Compare"><i class="lnr lnr-sync"></i> <span>Add To Compare</span></a>
                                                     <a href="wishlist.html" title="WishList"><i class="lnr lnr-heart"></i> <span>Add to WishList</span></a>
-                                                </div>
+                                                </div>{% endcomment %}
                                             </div>
                                         </div>
                                     </div>
@@ -91,14 +95,17 @@
                                             <p>{{el.description}}</p>
                                             <div class="pro-actions">
                                                 <div class="actions-primary">
-                                                    <form action="{% url 'cart_add' el.id%}" method="post" > 
-                                                        <a href=""  title="" data-original-title="Add to Cart"> + Add To Cart</a>
-                                                    </form>    
+                                                    {% comment "" %}<a title="В корзину"> В корзину</a>{% endcomment %}
+                                                    <form action="{% url 'cart_add' el.id%}" method='post', title="В корзину">
+                                                        {{cart_form}}
+                                                        {% csrf_token %}
+                                                        <input type='submit' value="Добавить в корзину">
+                                                    </form>   
                                                 </div>
-                                                <div class="actions-secondary">
+                                                {% comment "" %}<div class="actions-secondary">
                                                     <a href="compare.html" title="" data-original-title="Compare"><i class="lnr lnr-sync"></i> <span>Add To Compare</span></a>
                                                     <a href="wishlist.html" title="" data-original-title="WishList"><i class="lnr lnr-heart"></i> <span>Add to WishList</span></a>
-                                                </div>
+                                                </div>{% endcomment %}
                                             </div>
                                         </div>
                                     </div>{% endfor %}

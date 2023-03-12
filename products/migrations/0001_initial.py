@@ -5,50 +5,76 @@ import django.db.models.deletion
 
 
 class Migration(migrations.Migration):
-
     initial = True
 
-    dependencies = [
-    ]
+    dependencies = []
 
     operations = [
         migrations.CreateModel(
-            name='Image',
+            name="Image",
             fields=[
-                ('id', models.BigAutoField(primary_key=True, serialize=False)),
-                ('img_file_path', models.ImageField(upload_to='image/%Y/%m/%d/')),
+                ("id", models.BigAutoField(primary_key=True, serialize=False)),
+                ("img_file_path", models.ImageField(upload_to="image/%Y/%m/%d/")),
             ],
             options={
-                'db_table': 'image',
+                "db_table": "image",
             },
         ),
         migrations.CreateModel(
-            name='Names',
+            name="Names",
             fields=[
-                ('id', models.BigAutoField(primary_key=True, serialize=False)),
-                ('value', models.CharField(max_length=100)),
-                ('type', models.CharField(max_length=3)),
+                ("id", models.BigAutoField(primary_key=True, serialize=False)),
+                ("value", models.CharField(max_length=100)),
+                ("type", models.CharField(max_length=3)),
             ],
             options={
-                'db_table': 'names',
+                "db_table": "names",
             },
         ),
         migrations.CreateModel(
-            name='Products',
+            name="Products",
             fields=[
-                ('id', models.BigAutoField(primary_key=True, serialize=False)),
-                ('product_name', models.CharField(max_length=64)),
-                ('description', models.TextField(blank=True, null=True)),
-                ('price', models.DecimalField(decimal_places=2, max_digits=8)),
-                ('amount', models.IntegerField(blank=True, null=True)),
-                ('category_id', models.ForeignKey(on_delete=django.db.models.deletion.DO_NOTHING, related_name='category_id', to='products.names')),
-                ('group_id', models.ForeignKey(on_delete=django.db.models.deletion.DO_NOTHING, related_name='group_id', to='products.names')),
-                ('images', models.ManyToManyField(to='products.image')),
-                ('manufacturer_id', models.ForeignKey(on_delete=django.db.models.deletion.DO_NOTHING, related_name='manufacturer_id', to='products.names')),
-                ('model_id', models.ForeignKey(on_delete=django.db.models.deletion.DO_NOTHING, related_name='model_id', to='products.names')),
+                ("id", models.BigAutoField(primary_key=True, serialize=False)),
+                ("product_name", models.CharField(max_length=64)),
+                ("description", models.TextField(blank=True, null=True)),
+                ("price", models.DecimalField(decimal_places=2, max_digits=8)),
+                ("amount", models.IntegerField(blank=True, null=True)),
+                (
+                    "category_id",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.DO_NOTHING,
+                        related_name="category_id",
+                        to="products.names",
+                    ),
+                ),
+                (
+                    "group_id",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.DO_NOTHING,
+                        related_name="group_id",
+                        to="products.names",
+                    ),
+                ),
+                ("images", models.ManyToManyField(to="products.image")),
+                (
+                    "manufacturer_id",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.DO_NOTHING,
+                        related_name="manufacturer_id",
+                        to="products.names",
+                    ),
+                ),
+                (
+                    "model_id",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.DO_NOTHING,
+                        related_name="model_id",
+                        to="products.names",
+                    ),
+                ),
             ],
             options={
-                'db_table': 'products',
+                "db_table": "products",
             },
         ),
     ]

@@ -4,15 +4,14 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('products', '0002_rename_category_id_products_category_and_more'),
+        ("products", "0002_rename_category_id_products_category_and_more"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='names',
-            name='c_g',
+            model_name="names",
+            name="c_g",
             field=models.BigIntegerField(null=True),
         ),
     ]

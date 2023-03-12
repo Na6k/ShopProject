@@ -5,21 +5,27 @@ import django.db.models.deletion
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('products', '0003_names_c_g'),
+        ("products", "0003_names_c_g"),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='Group',
+            name="Group",
             fields=[
-                ('id', models.BigAutoField(primary_key=True, serialize=False)),
-                ('name', models.CharField(max_length=100)),
-                ('category', models.ForeignKey(on_delete=django.db.models.deletion.DO_NOTHING, related_name='categor_id', to='products.names')),
+                ("id", models.BigAutoField(primary_key=True, serialize=False)),
+                ("name", models.CharField(max_length=100)),
+                (
+                    "category",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.DO_NOTHING,
+                        related_name="categor_id",
+                        to="products.names",
+                    ),
+                ),
             ],
             options={
-                'db_table': 'group_',
+                "db_table": "group_",
             },
         ),
     ]

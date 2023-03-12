@@ -4,21 +4,20 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('products', '0005_remove_group_category_names_groups_alter_group_table'),
+        ("products", "0005_remove_group_category_names_groups_alter_group_table"),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='Manufacturer',
+            name="Manufacturer",
             fields=[
-                ('id', models.BigAutoField(primary_key=True, serialize=False)),
-                ('name_man', models.CharField(max_length=100)),
-                ('groups', models.ManyToManyField(to='products.group')),
+                ("id", models.BigAutoField(primary_key=True, serialize=False)),
+                ("name_man", models.CharField(max_length=100)),
+                ("groups", models.ManyToManyField(to="products.group")),
             ],
             options={
-                'db_table': 'manufacturer',
+                "db_table": "manufacturer",
             },
         ),
     ]

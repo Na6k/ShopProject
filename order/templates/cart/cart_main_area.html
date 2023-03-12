@@ -3,7 +3,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12 col-sm-12">
-                <form action="#">
+                <form action="" >
                     <div class="table-content table-responsive mb-45">
                         <table>
                             <thead>
@@ -12,26 +12,33 @@
                                     <th class="product-name">Наименование</th>
                                     <th class="product-price">Цена</th>
                                     <th class="product-quantity">Колличество</th>
-                                    <th class="product-subtotal">Total</th>
+                                    <th class="product-subtotal">Всего</th>
                                     <th class="product-remove">Удалить</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 {% for el in cart %}
-                                    {% with  product=el.product %}
+                                    {% with product=el.product %}
                                     {% comment "" %}{% endwith %}{% with  product=el.product  %}{% endcomment %}
                                 <tr>
                                     <td class="product-thumbnail">
                                         <a href="#"><img src="{% static 'img/products/13.jpg' %}" alt="cart-image" /></a>
                                     </td>
 
-                                    <td class="product-name"><a href="#">{{product.product_name}}</a></td>
+                                    <td class="product-name"><a href="#">{{el.products.product_name}}</a></td>
 
                                     <td class="product-price"><span class="amount">{{el.price}}</span></td>
 
-                                    <td class="product-quantity"><input type="number" value="1" />{{el.quantity}}</td>
-                                    <td class="product-subtotal">{{el.price}}</td>
-                                    <td class="product-remove"> <a href="{% url 'card_remove' products.id %}"><i class="fa fa-times" aria-hidden="true"></i></a></td>
+                                    <td class="product-quantity">
+                                        <form action="{% url 'cart_add' el.products.id %}" method="post">                                         
+                                            {{ el.update_quantity_form.quantity }}
+                                            {{ el.update_quantity_form.update}}
+                                            <input type="submit" value="Обновить">
+                                            {% csrf_token %}
+                                        </form>
+                                    </td>
+                                    <td class="product-subtotal">{{el.total_price}}</td>
+                                    <td class="product-remove"> <a href="{% url 'cart_remove' el.products.id %}"><i class="fa fa-times" aria-hidden="true"></i></a></td>
                                 </tr>
                                     {% endwith %}
                                 {% endfor %}
@@ -41,30 +48,32 @@
                     <div class="row">
                         <div class="col-md-8 col-sm-12">
                             <div class="buttons-cart">
-                                <input type="submit" value="Update Cart" />
-                                <a href="#">Continue Shopping</a>
+                                {% comment "" %}<input type="submit" value="Update Cart" />{% endcomment %}
+                                <a href="">Продолжить покупки</a>
                             </div>
                         </div>
                         <div class="col-md-4 col-sm-12">
                             <div class="cart_totals float-md-right text-md-right">
-                                <h2>Cart Totals</h2>
+                                <h2>Корзина</h2>
                                 <br />
                                 <table class="float-md-right">
                                     <tbody>
                                         <tr class="cart-subtotal">
-                                            <th>Subtotal</th>
-                                            <td><span class="amount">$215.00</span></td>
+                                            <th>Всего в корзине</th>
+                                            <td>
+                                                <span class="amount">{{amount}} товаров</span>
+                                            </td>
                                         </tr>
                                         <tr class="order-total">
-                                            <th>Total</th>
+                                            <th>К оплате</th>
                                             <td>
-                                                <strong><span class="amount">$215.00</span></strong>
+                                                <strong><span class="amount">{{cart.get_total_price}} BYN</span></strong>
                                             </td>
                                         </tr>
                                     </tbody>
                                 </table>
                                 <div class="wc-proceed-to-checkout">
-                                    <a href="{% url 'checkout_page' %}">Proceed to Checkout</a>
+                                    <a href="{% url 'checkout_page' %}">Оформить заказ</a>
                                 </div>
                             </div>
                         </div>
