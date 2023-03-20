@@ -1,0 +1,118 @@
+{% load static %}
+<footer class="off-white-bg2 pt-95 bdr-top pt-sm-55">
+    <div class="footer-top">
+        <div class="container">
+            <div class="row mb-60">
+                 <div class="col-xl-7 col-lg-7 ml-auto mr-auto col-md-8">
+                    <div class="news-desc text-center mb-30">
+                         <h3>Подпишись на нашу рассылку</h3>
+                         <p>Будь в курсе новостей первым!</p>
+                     </div>
+                     <div class="newsletter-box">
+                         <form action="#">
+                              <input class="subscribe" placeholder="Введите свой email" name="email" id="subscribe" type="text">
+                              <button type="submit" class="submit">Подписаться!</button>
+                         </form>
+                     </div>
+                 </div>
+            </div>                   
+            <div class="row">
+                <div class="col-lg-2 col-md-4 col-sm-6">
+                    <div class="single-footer mb-sm-40">
+                        <h3 class="footer-title">Информация</h3>
+                        <div class="footer-content">
+                            <ul class="footer-list">
+                                <li><a href="{% url 'about_page'%}">О нас</a></li>
+                                <li><a href="{% url 'contacts_page'%}">Наши контакты</a></li>
+                                <li><a href="{% url 'delivery_page' %}">Оплата и доставка</a></li>
+                                <li><a href="#">Privacy Policy</a></li>
+                                <li><a href="{% url 'contacts_page' %}">Сотрудничество</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4 col-sm-6">
+                    <div class="single-footer mb-sm-40">
+                        <h3 class="footer-title">Пользователям</h3>
+                        <div class="footer-content">
+                            <ul class="footer-list">
+                                <li><a href="{% url 'contacts_page'%}">Наши контакты</a></li>
+                                <li><a href="{% url 'register_page'%}">Регистрация</a></li>
+                                <li><a href="{% url 'login_page'%}">Войти</a></li>
+                                <li><a href="{% url 'cart_page' %}">Корзина</a></li>
+                                <li><a href="{% url 'checkout_page' %}">Оформление заказа</a></li>
+                                {% comment "" %}<li><a href="{% url 'wishlist_page'%}l">Wish List</a></li>{% endcomment %}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4 col-sm-6">
+                    <div class="single-footer mb-sm-40">
+                        <h3 class="footer-title">Покупателю</h3>
+                        <div class="footer-content">
+                            <ul class="footer-list">
+                                <li><a href="#">Наши контакты</a></li>
+                                <li><a href="{% url 'delivery_page' %}">Оплата и доставка</a></li>      
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4 col-sm-6">
+                    <div class="single-footer mb-sm-40">
+                        <h3 class="footer-title">My Account</h3>
+                        <div class="footer-content">
+                            <ul class="footer-list">
+                                <li><a href="{% url 'contacts_page'%}">Наши контакты</a></li>
+                                <li><a href="#">Returns</a></li>
+                                <li><a href="#">My Account</a></li>
+                                <li><a href="#">Order History</a></li>
+                                <li><a href="{% url 'wishlist_page'%}">Wish List</a></li>
+                                <li><a href="#">Newsletter</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-6">
+                    <div class="single-footer mb-sm-40">
+                        <h3 class="footer-title">Мы находимся</h3>
+                        <div class="footer-content">
+                            <ul class="footer-list address-content">
+                                <li><i class="lnr lnr-map-marker"></i> Адресс: Беларусь, Могилевская обл. г.Шклов ул.Ленинская, д.49.</li>
+                                <li><i class="lnr lnr-envelope"></i><a href="#"> mail: Tinka@mail.com</a></li>
+                                <li>
+                                    <i class="lnr lnr-phone-handset"></i> Телефон: +375 (29) 749 65 38
+                                </li>
+                            </ul>
+                            <div class="payment mt-25 bdr-top pt-30">
+                                <a href="#"><img class="img" src="{% static 'img/payment/paymethod.png' %}" alt="payment-image"></a>
+                            </div>                                   
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-middle text-center">
+        <div class="container">
+            <div class="footer-middle-content pt-20 pb-30">
+                    <ul class="social-footer">
+                        {% comment "" %}<li><a href="https://www.facebook.com/"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="https://twitter.com/"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href="https://plus.google.com/"><i class="fa fa-google-plus"></i></a></li>{% endcomment %}
+                        <li><a href="https://www.instagram.com/petrtabunov/"><img src="{% static 'img/icon/inst.png' %}" alt="instagram"></a></li>
+                        <li><a href="https://www.linkedin.com/in/nikita-labanau/"><i class="fa fa-linkedin"></i></a></li>
+                        <li><a href="https://vk.com/fishing_shop.shklov"><img src="{% static 'img/icon/button_vkontakte.png' %}" alt="Вконтакте"></a></li>
+                        <li><a href="https://www.youtube.com/@TinkaTinka"><img src="{% static 'img/icon/youtube.png' %}" alt="Youtube"></a></li>
+                    </ul>
+            </div>
+        </div>
+    </div>
+    {% comment "" %}<div class="footer-bottom pb-30">
+        <div class="container">
+
+             <div class="copyright-text text-center">                    
+                <p>Copyright © 2018 <a target="_blank" href="#">Truemart</a> All Rights Reserved.</p>
+             </div>
+        </div>
+    </div>{% endcomment %}
+</footer>

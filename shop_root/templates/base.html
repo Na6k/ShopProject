@@ -1,0 +1,72 @@
+{% load static %}
+<!doctype html>
+<html class="no-js" lang="zxx">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Home || Truemart Responsive Html5 Ecommerce Template</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="shortcut icon" href="{% static 'img/favicon.ico' %}">
+    <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
+    <link rel="stylesheet" href=" {% static 'css/ionicons.min.css' %} ">
+    <link rel="stylesheet" href="{% static 'css/linearicons.css' %}">
+    <link rel="stylesheet" href="{% static 'css/nice-select.css' %}">
+    <link rel="stylesheet" href="{% static 'css/jquery.fancybox.css' %}">
+    <link rel="stylesheet" href="{% static 'css/jquery-ui.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/meanmenu.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/nivo-slider.css' %}">
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/default.css' %}">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+    <script src="{% static 'js/vendor/modernizr-3.5.0.min.js' %}"></script>
+    
+</head>
+
+<body>
+    <div class="wrapper">
+        {% include 'base/popup_banner.html' %}
+        {% include 'base/popup_wrapper.html' %}
+        {% include 'base/header.html' %}
+        
+        {% block 'home' %}{% endblock 'home' %}
+        {% block 'group' %}{% endblock 'group' %}
+        {% block 'manufacturer' %}{% endblock 'manufacturer' %}
+        {% block 'products' %}{% endblock 'products' %}
+        {% block 'contacts' %}{% endblock 'contacts' %}
+        {% block 'about' %}{% endblock 'about' %}
+        {% block 'wishlist' %}{% endblock 'wishlist' %}
+        {% block 'cart' %}{% endblock 'cart' %}
+        {% block 'checkout' %}{% endblock 'checkout' %}
+        {% block 'product' %}{% endblock 'product' %}
+        {% block 'blog' %}{% endblock 'blog' %}
+        {% block 'single_blog' %}{% endblock 'single_blog' %}
+        {% block 'error404' %}{% endblock 'error404' %}
+        {% block 'delivery' %}{% endblock 'delivery' %}
+        {% block 'register' %}{% endblock 'register' %}
+        {% block 'login' %}{% endblock 'login' %}
+        {% block 'forgot_password' %}{% endblock 'forgot_password' %}
+
+        {% include 'base/support_area.html' %}
+        {% include 'base/footer.html' %}
+        {% include 'base/main_product.html' %}
+    </div>
+   
+    <script src="{% static 'js/vendor/jquery-3.2.1.min.js' %}"></script>
+    <script src="{% static 'js/jquery.countdown.min.js' %}"></script>
+    <script src="{% static 'js/jquery.meanmenu.min.js' %}"></script>
+    <script src="{% static 'js/jquery.scrollUp.js' %}"></script>
+    <script src="{% static 'js/jquery.nivo.slider.js' %}"></script>
+    <script src="{% static 'js/jquery.fancybox.min.js' %}"></script>
+    <script src="{% static 'js/jquery.nice-select.min.js' %}"></script>
+    <script src="{% static 'js/jquery-ui.min.js' %}"></script>
+    <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'js/popper.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/plugins.js' %}"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+</body>
+
+</html>

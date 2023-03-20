@@ -1,0 +1,36 @@
+{% load static %}
+<div class="main-page-banner home-3">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-3 col-lg-4 d-none d-lg-block">
+                <div class="vertical-menu mb-all-30">
+                    <nav>
+                        <ul class="vertical-menu-list">
+                            {% for name in names %}
+                            <li><a href="{% url 'group_page' name.value %}"><span>
+                                {% if name.img %}
+                                <img src="{{ name.img.url }}" alt="menu-icon">
+                                {% else %}
+                                <img src="{% static 'img/vertical-menu/udochki.png' %}" alt="menu-icon">
+                                {% endif %}
+                            </span>{{name.value}}<i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                                <ul class="ht-dropdown mega-child">
+                                   {% for group in name.groups.all %}
+                                    <li><a href="{% url 'manufacturer_page' name.value group.name%}">{{group.name}}<i class="fa fa-angle-right"></i></a>
+                                        <ul class="ht-dropdown mega-child">
+                                            <li><a href="{% url 'manufacturer_page' name.value group.name%}"><h6>Производители</h6></a></li>
+                                            {% for i in group.manufacturer.all %}
+                                            <li><a href="{% url 'products_page' name.value group.name i.name_man%}">{{i.name_man}}</a></li>
+                                            {% endfor %}
+                                            
+                                        </ul>
+                                    </li>{% endfor %}
+                                </ul>
+                            </li> {% endfor %}
+                        </ul>    
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>         
+</div>

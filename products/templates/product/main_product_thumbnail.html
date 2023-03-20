@@ -1,0 +1,118 @@
+{% load static %}
+<div class="main-product-thumbnail ptb-100 ptb-sm-60">
+    <div class="container">
+        <div class="thumb-bg">
+            <div class="row">
+                <div class="col-lg-5 mb-all-40">
+                    <div class="tab-content">
+                    {% if img_active %}
+                        <div id="thumb1" class="tab-pane fade show active">
+                            <a data-fancybox="images" href="{{img_active.img_file_path.url}}">
+                            <img src="{{img_active.img_file_path.url}}" alt="product-view"></a>
+                        </div>
+                        {% for el in image %}
+                        {% if  el.img_file_path%}
+                        <div id="{{el.id}}" class="tab-pane fade">
+                            <a data-fancybox="images" href="{{el.img_file_path.url}}"><img src="{{el.img_file_path.url}}" alt="product-view"></a>
+                        </div>{%endif%}
+                        {% endfor %}
+                        {% else %}
+                        <div id="thumb1" class="tab-pane fade show active">
+                            <a data-fancybox="images" href="{% static 'img/products/35.jpg'%}"><img src="{% static 'img/products/35.jpg'%}" alt="product-view"></a>
+                        </div>
+                        <div id="thumb2" class="tab-pane fade">
+                            <a data-fancybox="images" href="{% static 'img/products/13.jpg'%}"><img src="{% static 'img/products/13.jpg'%}" alt="product-view"></a>
+                        </div>{% endif %}
+                    </div>
+                    <div class="product-thumbnail mt-15">
+                        <div class="thumb-menu owl-carousel nav tabs-area" role="tablist">
+                            {% if  img_active%}
+                            {% for el in image %}
+                            <a data-toggle="tab" href="#{{el.id}}"><img src="{{el.img_file_path.url}}" alt="product-thumbnail"></a>
+                            {% endfor %}
+                            {% else %}
+                            <a class="active" data-toggle="tab" href="#thumb2"><img src="{% static 'img/products/35.jpg'%}" alt="product-thumbnail"></a>
+                            <a data-toggle="tab" href="#thumb2"><img src="{% static 'img/products/35.jpg'%}" alt="product-thumbnail"></a>
+                            {%endif%}
+                            
+                            
+                        </div>
+                    </div>
+                </div>
+                {% for el in about_prod %}
+                <div class="col-lg-7">
+                    <div class="thubnail-desc fix">
+                        <h3 class="product-header">{{el.product_name}}</h3>
+                        <div class="rating-summary fix mtb-10">
+                            <div class="rating">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star-o"></i>
+                                <i class="fa fa-star-o"></i>
+                                <i class="fa fa-star-o"></i>
+                            </div>
+                            <div class="rating-feedback">
+                                <a href="#">(1 review)</a>
+                                <a href="#">add to your review</a>
+                            </div>
+                        </div>
+                        <div class="pro-price mtb-30">
+                            <p class="d-flex align-items-center"><span class="prev-price">{{el.price}}</span><span class="price">{{el.price}}</span><span class="saving-price">save 8%</span></p>
+                        </div>
+                        <p class="mb-20 pro-desc-details">{{el.description}}</p>
+                        <div class="product-size mb-20 clearfix">
+                            <label>Size</label>
+                            <select class="">
+                              <option>S</option>
+                              <option>M</option>
+                              <option>L</option>
+                            </select>
+                        </div>
+                        <div class="color clearfix mb-20">
+                            <label>color</label>
+                            <ul class="color-list">
+                                <li>
+                                    <a class="orange active" href="#"></a>
+                                </li>
+                                <li>
+                                    <a class="paste" href="#"></a>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <div class="box-quantity d-flex hot-product2">
+                            {% comment "" %}<form action="" method='post'>                                
+                                <input class="quantity mr-15" type="number" min="1" value="1">                                    
+                            </form>{% endcomment %}
+                            <div class="pro-actions">
+                                <div class="actions-primary">
+                                    <form action="{% url 'cart_add' el.id%}" method='post', title="В корзину">
+                                        {{cart_form}}
+                                        {% csrf_token %}
+                                        <input type='submit' value="В корзину">
+                                    </form>
+                                </div>
+                                <div class="actions-secondary">
+                                    <a href="compare.html" title="" data-original-title="Compare"><i class="lnr lnr-sync"></i> <span>Add To Compare</span></a>
+                                    <a href="wishlist.html" title="" data-original-title="WishList"><i class="lnr lnr-heart"></i> <span>Add to WishList</span></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="pro-ref mt-20">
+                            <p><span class="in-stock"><i class="ion-checkmark-round"></i> IN STOCK</span></p>
+                        </div>
+                        <div class="socila-sharing mt-25">
+                            <ul class="d-flex">
+                                <li>share</li>
+                                <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                                <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                                <li><a href="#"><i class="fa fa-google-plus-official" aria-hidden="true"></i></a></li>
+                                <li><a href="#"><i class="fa fa-pinterest-p" aria-hidden="true"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>{% endfor %}
+            </div>
+        </div>
+    </div>
+</div>

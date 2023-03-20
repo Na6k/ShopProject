@@ -1,0 +1,15 @@
+<div class="breadcrumb-area mt-30">
+    <div class="container">
+        <div class="breadcrumb">
+            <ul class="d-flex align-items-center">
+                <li><a href="{% url 'home_page'%}">Главная</a></li>
+                {% for  el in about_prod %}
+                <li><a href="{% url 'group_page' el.category.value%}">{{el.category.value}}</a></li>
+                <li><a href="{% url 'manufacturer_page' el.category.value el.group.name %}">{{el.group.name}}</a></li>
+                <li><a href="{% url 'products_page' el.category.value el.group.name el.manufacturer.name_man%}">{{el.manufacturer.name_man}}</a></li>
+                {% endfor %}
+                <li class="active"><a href="{% url 'product_page' name_gr prod_name%}">{{prod_name}}</a></li>
+            </ul>
+        </div>
+    </div>
+</div>

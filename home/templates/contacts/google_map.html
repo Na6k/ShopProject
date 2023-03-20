@@ -1,0 +1,16 @@
+{% load static %}
+<div class="goole-map">
+    <div id="map" style="height: 400px; position: relative; overflow: hidden;">
+        <div style="height: 100%; width: 100%; position: absolute; top: 0px; left: 0px; background-color: rgb(229, 227, 223);">
+            <div class="gm-err-container">
+                <div class="gm-err-content">
+                    <div class="gm-err-icon">
+                        <img src= "https://maps.gstatic.com/mapfiles/api-3/images/icon_error.png" alt="" draggable="false" style="user-select: none;">
+                    </div>
+                    {% comment "" %}<div class="gm-err-title">Ошибка</div>
+                    <div class="gm-err-message">При загрузке Google Карт на этой странице возникла проблема. Подробности вы найдете в консоли JavaScript.</div>{% endcomment %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

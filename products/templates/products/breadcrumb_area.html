@@ -1,0 +1,12 @@
+<div class="breadcrumb-area mt-30">
+    <div class="container">
+        <div class="breadcrumb">
+            <ul class="d-flex align-items-center">
+                <li><a href="{% url 'home_page' %}">Главная</a></li>
+                <li><a href="{% url 'group_page' value%}">{{value}}</a></li>
+                <li ><a href="{% url 'manufacturer_page' value name%}">Произодитель</a></li>
+                <li class="active"><a href="{% url 'products_page' value name manufacturer%}">{{manufacturer}}</a></li>
+            </ul>
+        </div>
+    </div>
+</div>

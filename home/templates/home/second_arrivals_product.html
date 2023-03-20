@@ -1,0 +1,775 @@
+{% load static %}
+<div class="second-arrivals-product pb-45 pb-sm-5">
+    <div class="container">
+        <div class="main-product-tab-area">
+            <div class="tab-menu mb-25">
+                <div class="section-ttitle">
+                    <h2>Best Seller</h2>
+               </div>
+                <ul class="nav tabs-area" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" data-toggle="tab" href="#electronics2">Electronics </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="tab" href="#beauty2">Beauty</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="tab" href="#electronics2">Sport/Outdoor</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="tab" href="#kids2">Living</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="tab" href="#beauty2">Food</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="tab" href="#kids2">Baby/Kids</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="tab" href="#fshion2">Fashion</a>
+                    </li>
+                </ul>                       
+
+            </div> 
+            <div class="tab-content">
+                <div id="fshion2" class="tab-pane fade">
+                    <div class="best-seller-pro-active owl-carousel">
+                            <div class="single-product">
+                                <div class="pro-img">
+                                    <a href="{% comment "" %}{% url 'product_page'%}{% endcomment %}">
+                                        <img class="primary-img" src="{% static 'img/products/1.jpg' %}" alt="single-product">
+                                        <img class="secondary-img" src="{% static 'img/products/2.jpg' %}" alt="single-product">
+                                    </a>
+                                    <a href="#" class="quick_view" data-toggle="modal" data-target="#myModal" title="Quick View"><i class="lnr lnr-magnifier"></i></a>
+                                </div>
+                                <div class="pro-content">
+                                    <div class="pro-info">
+                                        <h4><a href="{% comment "" %}{% url 'product_page'%}{% endcomment %}">Work Lamp Silver Proin</a></h4>
+                                        <p><span class="price">$320.45</span></p>
+                                    </div>
+                                    <div class="pro-actions">
+                                        <div class="actions-primary">
+                                            <a href="{% url 'cart_page'%}" title="Add to Cart"> + Add To Cart</a>
+                                        </div>
+                                        <div class="actions-secondary">
+                                            <a href="compare.html" title="Compare"><i class="lnr lnr-sync"></i> <span>Add To Compare</span></a>
+                                            <a href="wishlist.html" title="WishList"><i class="lnr lnr-heart"></i> <span>Add to WishList</span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            {% comment "" %}
+                            <div class="single-product">
+                                <div class="pro-img">
+                                    <a href="{% url 'product_page'%}">
+                                        <img class="primary-img" src="{% static 'img/products/3.jpg' %}" alt="single-product">
+                                        <img class="secondary-img" src="{% static 'img/products/4.jpg' %}" alt="single-product">
+                                    </a>
+                                    <a href="#" class="quick_view" data-toggle="modal" data-target="#myModal" title="Quick View"><i class="lnr lnr-magnifier"></i></a>
+                                </div>
+                                <div class="pro-content">
+                                    <div class="pro-info">
+                                        <h4><a href="{% url 'product_page'%}">Gpoly and Bark Eames Style</a></h4>
+                                        <p><span class="price">$150.30</span></p>
+                                    </div>
+                                    <div class="pro-actions">
+                                        <div class="actions-primary">
+                                            <a href="{% url 'cart_page'%}" title="Add to Cart"> + Add To Cart</a>
+                                        </div>
+                                        <div class="actions-secondary">
+                                            <a href="compare.html" title="Compare"><i class="lnr lnr-sync"></i> <span>Add To Compare</span></a>
+                                            <a href="wishlist.html" title="WishList"><i class="lnr lnr-heart"></i> <span>Add to WishList</span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="single-product">
+                                <div class="pro-img">
+                                    <a href="{% url 'product_page'%}">
+                                        <img class="primary-img" src="{% static 'img/products/5.jpg' %}" alt="single-product">
+                                        <img class="secondary-img" src="{% static 'img/products/6.jpg' %}" alt="single-product">
+                                    </a>
+                                    <a href="#" class="quick_view" data-toggle="modal" data-target="#myModal" title="Quick View"><i class="lnr lnr-magnifier"></i></a>
+                                </div>
+                                <div class="pro-content">
+                                    <div class="pro-info">
+                                        <h4><a href="{% url 'product_page'%}">Poly and Bark Vortex Side</a></h4>
+                                        <p><span class="price">$150.45</span></p>
+                                    </div>
+                                    <div class="pro-actions">
+                                        <div class="actions-primary">
+                                            <a href="cart.html" title="Add to Cart"> + Add To Cart</a>
+                                        </div>
+                                        <div class="actions-secondary">
+                                            <a href="compare.html" title="Compare"><i class="lnr lnr-sync"></i> <span>Add To Compare</span></a>
+                                            <a href="wishlist.html" title="WishList"><i class="lnr lnr-heart"></i> <span>Add to WishList</span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="single-product">
+                                <div class="pro-img">
+                                    <a href="{% url 'product_page'%}">
+                                        <img class="primary-img" src="{% static 'img/products/8.jpg' %}" alt="single-product">
+                                        <img class="secondary-img" src="{% static 'img/products/9.jpg' %}" alt="single-product">
+                                    </a>
+                                    <a href="#" class="quick_view" data-toggle="modal" data-target="#myModal" title="Quick View"><i class="lnr lnr-magnifier"></i></a>
+                                </div>
+                                <div class="pro-content">
+                                    <div class="pro-info">
+                                        <h4><a href="{% url 'product_page'%}">Eames and Bark  Style</a></h4>
+                                        <p><span class="price">$180.45</span></p>
+                                    </div>
+                                    <div class="pro-actions">
+                                        <div class="actions-primary">
+                                            <a href="cart.html" title="Add to Cart"> + Add To Cart</a>
+                                        </div>
+                                        <div class="actions-secondary">
+                                            <a href="compare.html" title="Compare"><i class="lnr lnr-sync"></i> <span>Add To Compare</span></a>
+                                            <a href="wishlist.html" title="WishList"><i class="lnr lnr-heart"></i> <span>Add to WishList</span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="single-product">
+                                <div class="pro-img">
+                                    <a href="{% url 'product_page'%}">
+                                        <img class="primary-img" src="{% static 'img/products/11.jpg' %}" alt="single-product">
+                                        <img class="secondary-img" src="{% static 'img/products/12.jpg' %}" alt="single-product">
+                                    </a>
+                                    <a href="#" class="quick_view" data-toggle="modal" data-target="#myModal" title="Quick View"><i class="lnr lnr-magnifier"></i></a>
+                                </div>
+                                <div class="pro-content">
+                                    <div class="pro-info">
+                                        <h4><a href="{% url 'product_page'%}">Eames and Vortex Side</a></h4>
+                                        <p><span class="price">$160.45</span></p>
+                                    </div>
+                                    <div class="pro-actions">
+                                        <div class="actions-primary">
+                                            <a href="cart.html" title="Add to Cart"> + Add To Cart</a>
+                                        </div>
+                                        <div class="actions-secondary">
+                                            <a href="compare.html" title="Compare"><i class="lnr lnr-sync"></i> <span>Add To Compare</span></a>
+                                            <a href="wishlist.html" title="WishList"><i class="lnr lnr-heart"></i> <span>Add to WishList</span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="single-product">
+                                <div class="pro-img">
+                                    <a href="{% url 'product_page'%}">
+                                        <img class="primary-img" src="{% static 'img/products/15.jpg' %}" alt="single-product">
+                                        <img class="secondary-img" src="{% static 'img/products/16.jpg' %}" alt="single-product">
+                                    </a>
+                                    <a href="#" class="quick_view" data-toggle="modal" data-target="#myModal" title="Quick View"><i class="lnr lnr-magnifier"></i></a>
+                                </div>
+                                <div class="pro-content">
+                                    <div class="pro-info">
+                                        <h4><a href="{% url 'product_page'%}">Bark Vortex Side Eames</a></h4>
+                                        <p><span class="price">$84.45</span></p>
+                                    </div>
+                                    <div class="pro-actions">
+                                        <div class="actions-primary">
+                                            <a href="cart.html" title="Add to Cart"> + Add To Cart</a>
+                                        </div>
+                                        <div class="actions-secondary">
+                                            <a href="compare.html" title="Compare"><i class="lnr lnr-sync"></i> <span>Add To Compare</span></a>
+                                            <a href="wishlist.html" title="WishList"><i class="lnr lnr-heart"></i> <span>Add to WishList</span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="single-product">
+                                <div class="pro-img">
+                                    <a href="product.html">
+                                        <img class="primary-img" src="{% static 'img/products/13.jpg' %}" alt="single-product">
+                                        <img class="secondary-img" src="{% static 'img/products/14.jpg' %}" alt="single-product">
+                                    </a>
+                                    <a href="#" class="quick_view" data-toggle="modal" data-target="#myModal" title="Quick View"><i class="lnr lnr-magnifier"></i></a>
+                                </div>
+                                <div class="pro-content">
+                                    <div class="pro-info">
+                                        <h4><a href="product.html">Poly and Bark Vortex Side</a></h4>
+                                        <p><span class="price">$95.45</span></p>
+                                    </div>
+                                    <div class="pro-actions">
+                                        <div class="actions-primary">
+                                            <a href="cart.html" title="Add to Cart"> + Add To Cart</a>
+                                        </div>
+                                        <div class="actions-secondary">
+                                            <a href="compare.html" title="Compare"><i class="lnr lnr-sync"></i> <span>Add To Compare</span></a>
+                                            <a href="wishlist.html" title="WishList"><i class="lnr lnr-heart"></i> <span>Add to WishList</span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="single-product">
+                                <div class="pro-img">
+                                    <a href="product.html">
+                                        <img class="primary-img" src="{% static 'img/products/1.jpg' %}" alt="single-product">
+                                        <img class="secondary-img" src="{% static 'img/products/7.jpg' %}" alt="single-product">
+                                    </a>
+                                    <a href="#" class="quick_view" data-toggle="modal" data-target="#myModal" title="Quick View"><i class="lnr lnr-magnifier"></i></a>
+                                </div>
+                                <div class="pro-content">
+                                    <div class="pro-info">
+                                        <h4><a href="product.html">Poly and Bark Vortex Side</a></h4>
+                                        <p><span class="price">$84.45</span></p>
+                                    </div>
+                                    <div class="pro-actions">
+                                        <div class="actions-primary">
+                                            <a href="cart.html" title="Add to Cart"> + Add To Cart</a>
+                                        </div>
+                                        <div class="actions-secondary">
+                                            <a href="compare.html" title="Compare"><i class="lnr lnr-sync"></i> <span>Add To Compare</span></a>
+                                            <a href="wishlist.html" title="WishList"><i class="lnr lnr-heart"></i> <span>Add to WishList</span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>{% endcomment %}
+                    </div>
+                </div>
+                <div id="kids2" class="tab-pane fade">
+                    <div class="best-seller-pro-active owl-carousel">
+                        <div class="single-product">
+                            <div class="pro-img">
+                                <a href="product.html">
+                                    <img class="primary-img" src="{% static 'img/products/42.jpg' %}" alt="single-product">
+                                    <img class="secondary-img" src="{% static 'img/products/43.jpg' %}" alt="single-product">
+                                </a>
+                                <a href="#" class="quick_view" data-toggle="modal" data-target="#myModal" title="Quick View"><i class="lnr lnr-magnifier"></i></a>
+                            </div>
+                            <div class="pro-content">
+                                <div class="pro-info">
+                                    <h4><a href="product.html">Utensils and Knives Block</a></h4>
+                                    <p><span class="price">$84.45</span></p>
+                                </div>
+                                <div class="pro-actions">
+                                    <div class="actions-primary">
+                                        <a href="cart.html" title="Add to Cart"> + Add To Cart</a>
+                                    </div>
+                                    <div class="actions-secondary">
+                                        <a href="compare.html" title="Compare"><i class="lnr lnr-sync"></i> <span>Add To Compare</span></a>
+                                        <a href="wishlist.html" title="WishList"><i class="lnr lnr-heart"></i> <span>Add to WishList</span></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="single-product">
+                            <div class="pro-img">
+                                <a href="product.html">
+                                    <img class="primary-img" src="{% static 'img/products/40.jpg' %}" alt="single-product">
+                                    <img class="secondary-img" src="{% static 'img/products/41.jpg' %}" alt="single-product">
+                                </a>
+                                <a href="#" class="quick_view" data-toggle="modal" data-target="#myModal" title="Quick View"><i class="lnr lnr-magnifier"></i></a>
+                            </div>
+                            <div class="pro-content">
+                                <div class="pro-info">
+                                    <h4><a href="product.html">Terra Xpress HE Cooking </a></h4>
+                                    <p><span class="price">$63.45</span></p>
+                                </div>
+                                <div class="pro-actions">
+                                    <div class="actions-primary">
+                                        <a href="cart.html" title="Add to Cart"> + Add To Cart</a>
+                                    </div>
+                                    <div class="actions-secondary">
+                                        <a href="compare.html" title="Compare"><i class="lnr lnr-sync"></i> <span>Add To Compare</span></a>
+                                        <a href="wishlist.html" title="WishList"><i class="lnr lnr-heart"></i> <span>Add to WishList</span></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="single-product">
+                            <div class="pro-img">
+                                <a href="product.html">
+                                    <img class="primary-img" src="{% static 'img/products/39.jpg' %}" alt="single-product">
+                                    <img class="secondary-img" src="{% static 'img/products/38.jpg' %}" alt="single-product">
+                                </a>
+                                <a href="#" class="quick_view" data-toggle="modal" data-target="#myModal" title="Quick View"><i class="lnr lnr-magnifier"></i></a>
+                            </div>
+                            <div class="pro-content">
+                                <div class="pro-info">
+                                    <h4><a href="product.html">Robert Welch Knife Block</a></h4>
+                                    <p><span class="price">$100.45</span></p>
+                                </div>
+                                <div class="pro-actions">
+                                    <div class="actions-primary">
+                                        <a href="cart.html" title="Add to Cart"> + Add To Cart</a>
+                                    </div>
+                                    <div class="actions-secondary">
+                                        <a href="compare.html" title="Compare"><i class="lnr lnr-sync"></i> <span>Add To Compare</span></a>
+                                        <a href="wishlist.html" title="WishList"><i class="lnr lnr-heart"></i> <span>Add to WishList</span></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="single-product">
+                            <div class="pro-img">
+                                <a href="product.html">
+                                    <img class="primary-img" src="{% static 'img/products/36.jpg' %}" alt="single-product">
+                                    <img class="secondary-img" src="{% static 'img/products/37.jpg' %}" alt="single-product">
+                                </a>
+                                <a href="#" class="quick_view" data-toggle="modal" data-target="#myModal" title="Quick View"><i class="lnr lnr-magnifier"></i></a>
+                            </div>
+                            <div class="pro-content">
+                                <div class="pro-info">
+                                    <h4><a href="product.html">Poly and Bark Vortex Side</a></h4>
+                                    <p><span class="price">$90.50</span></p>
+                                </div>
+                                <div class="pro-actions">
+                                    <div class="actions-primary">
+                                        <a href="cart.html" title="Add to Cart"> + Add To Cart</a>
+                                    </div>
+                                    <div class="actions-secondary">
+                                        <a href="compare.html" title="Compare"><i class="lnr lnr-sync"></i> <span>Add To Compare</span></a>
+                                        <a href="wishlist.html" title="WishList"><i class="lnr lnr-heart"></i> <span>Add to WishList</span></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="single-product">
+                            <div class="pro-img">
+                                <a href="product.html">
+                                    <img class="primary-img" src="{% static 'img/products/35.jpg' %}" alt="single-product">
+                                    <img class="secondary-img" src="{% static 'img/products/36.jpg' %}" alt="single-product">
+                                </a>
+                                <a href="#" class="quick_view" data-toggle="modal" data-target="#myModal" title="Quick View"><i class="lnr lnr-magnifier"></i></a>
+                            </div>
+                            <div class="pro-content">
+                                <div class="pro-info">
+                                    <h4><a href="product.html">Bark and  Vortex Side</a></h4>
+                                    <p><span class="price">$69.20</span></p>
+                                </div>
+                                <div class="pro-actions">
+                                    <div class="actions-primary">
+                                        <a href="cart.html" title="Add to Cart"> + Add To Cart</a>
+                                    </div>
+                                    <div class="actions-secondary">
+                                        <a href="compare.html" title="Compare"><i class="lnr lnr-sync"></i> <span>Add To Compare</span></a>
+                                        <a href="wishlist.html" title="WishList"><i class="lnr lnr-heart"></i> <span>Add to WishList</span></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="single-product">
+                            <div class="pro-img">
+                                <a href="product.html">
+                                    <img class="primary-img" src="{% static 'img/products/34.jpg' %}" alt="single-product">
+                                    <img class="secondary-img" src="{% static 'img/products/35.jpg' %}" alt="single-product">
+                                </a>
+                                <a href="#" class="quick_view" data-toggle="modal" data-target="#myModal" title="Quick View"><i class="lnr lnr-magnifier"></i></a>
+                            </div>
+                            <div class="pro-content">
+                                <div class="pro-info">
+                                    <h4><a href="product.html">Compary and Bark Vortex Shewe</a></h4>
+                                    <p><span class="price">$84.45</span></p>
+                                </div>
+                                <div class="pro-actions">
+                                    <div class="actions-primary">
+                                        <a href="cart.html" title="Add to Cart"> + Add To Cart</a>
+                                    </div>
+                                    <div class="actions-secondary">
+                                        <a href="compare.html" title="Compare"><i class="lnr lnr-sync"></i> <span>Add To Compare</span></a>
+                                        <a href="wishlist.html" title="WishList"><i class="lnr lnr-heart"></i> <span>Add to WishList</span></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="single-product">
+                            <div class="pro-img">
+                                <a href="product.html">
+                                    <img class="primary-img" src="{% static 'img/products/32.jpg' %}" alt="single-product">
+                                    <img class="secondary-img" src="{% static 'img/products/33.jpg' %}" alt="single-product">
+                                </a>
+                                <a href="#" class="quick_view" data-toggle="modal" data-target="#myModal" title="Quick View"><i class="lnr lnr-magnifier"></i></a>
+                            </div>
+                            <div class="pro-content">
+                                <div class="pro-info">
+                                    <h4><a href="product.html">kallery kids  weare</a></h4>
+                                    <p><span class="price">$98.50</span></p>
+                                </div>
+                                <div class="pro-actions">
+                                    <div class="actions-primary">
+                                        <a href="cart.html" title="Add to Cart"> + Add To Cart</a>
+                                    </div>
+                                    <div class="actions-secondary">
+                                        <a href="compare.html" title="Compare"><i class="lnr lnr-sync"></i> <span>Add To Compare</span></a>
+                                        <a href="wishlist.html" title="WishList"><i class="lnr lnr-heart"></i> <span>Add to WishList</span></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="single-product">
+                            <div class="pro-img">
+                                <a href="product.html">
+                                    <img class="primary-img" src="{% static 'img/products/1.jpg' %}" alt="single-product">
+                                    <img class="secondary-img" src="{% static 'img/products/7.jpg' %}" alt="single-product">
+                                </a>
+                                <a href="#" class="quick_view" data-toggle="modal" data-target="#myModal" title="Quick View"><i class="lnr lnr-magnifier"></i></a>
+                            </div>
+                            <div class="pro-content">
+                                <div class="pro-info">
+                                    <h4><a href="product.html">Poly and Bark Vortex Side</a></h4>
+                                    <p><span class="price">$84.45</span></p>
+                                </div>
+                                <div class="pro-actions">
+                                    <div class="actions-primary">
+                                        <a href="cart.html" title="Add to Cart"> + Add To Cart</a>
+                                    </div>
+                                    <div class="actions-secondary">
+                                        <a href="compare.html" title="Compare"><i class="lnr lnr-sync"></i> <span>Add To Compare</span></a>
+                                        <a href="wishlist.html" title="WishList"><i class="lnr lnr-heart"></i> <span>Add to WishList</span></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="beauty2" class="tab-pane fade">
+                    <div class="best-seller-pro-active owl-carousel">
+                        <div class="single-product">
+                            <div class="pro-img">
+                                <a href="product.html">
+                                    <img class="primary-img" src="{% static 'img/products/43.jpg' %}" alt="single-product">
+                                    <img class="secondary-img" src="{% static 'img/products/42.jpg' %}" alt="single-product">
+                                </a>
+                                <a href="#" class="quick_view" data-toggle="modal" data-target="#myModal" title="Quick View"><i class="lnr lnr-magnifier"></i></a>
+                            </div>
+                            <div class="pro-content">
+                                <div class="pro-info">
+                                    <h4><a href="product.html">Poly and Bark Vortex Side</a></h4>
+                                    <p><span class="price">$84.45</span></p>
+                                </div>
+                                <div class="pro-actions">
+                                    <div class="actions-primary">
+                                        <a href="cart.html" title="Add to Cart"> + Add To Cart</a>
+                                    </div>
+                                    <div class="actions-secondary">
+                                        <a href="compare.html" title="Compare"><i class="lnr lnr-sync"></i> <span>Add To Compare</span></a>
+                                        <a href="wishlist.html" title="WishList"><i class="lnr lnr-heart"></i> <span>Add to WishList</span></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="single-product">
+                            <div class="pro-img">
+                                <a href="product.html">
+                                    <img class="primary-img" src="{% static 'img/products/41.jpg' %}" alt="single-product">
+                                    <img class="secondary-img" src="{% static 'img/products/39.jpg' %}" alt="single-product">
+                                </a>
+                                <a href="#" class="quick_view" data-toggle="modal" data-target="#myModal" title="Quick View"><i class="lnr lnr-magnifier"></i></a>
+                            </div>
+                            <div class="pro-content">
+                                <div class="pro-info">
+                                    <h4><a href="product.html">Poly and Bark Vortex Side</a></h4>
+                                    <p><span class="price">$84.45</span></p>
+                                </div>
+                                <div class="pro-actions">
+                                    <div class="actions-primary">
+                                        <a href="cart.html" title="Add to Cart"> + Add To Cart</a>
+                                    </div>
+                                    <div class="actions-secondary">
+                                        <a href="compare.html" title="Compare"><i class="lnr lnr-sync"></i> <span>Add To Compare</span></a>
+                                        <a href="wishlist.html" title="WishList"><i class="lnr lnr-heart"></i> <span>Add to WishList</span></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="single-product">
+                            <div class="pro-img">
+                                <a href="product.html">
+                                    <img class="primary-img" src="{% static 'img/products/5.jpg' %}" alt="single-product">
+                                    <img class="secondary-img" src="{% static 'img/products/6.jpg' %}" alt="single-product">
+                                </a>
+                                <a href="#" class="quick_view" data-toggle="modal" data-target="#myModal" title="Quick View"><i class="lnr lnr-magnifier"></i></a>
+                            </div>
+                            <div class="pro-content">
+                                <div class="pro-info">
+                                    <h4><a href="product.html">Poly and Bark Vortex Side</a></h4>
+                                    <p><span class="price">$84.45</span></p>
+                                </div>
+                                <div class="pro-actions">
+                                    <div class="actions-primary">
+                                        <a href="cart.html" title="Add to Cart"> + Add To Cart</a>
+                                    </div>
+                                    <div class="actions-secondary">
+                                        <a href="compare.html" title="Compare"><i class="lnr lnr-sync"></i> <span>Add To Compare</span></a>
+                                        <a href="wishlist.html" title="WishList"><i class="lnr lnr-heart"></i> <span>Add to WishList</span></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="single-product">
+                            <div class="pro-img">
+                                <a href="product.html">
+                                    <img class="primary-img" src="{% static 'img/products/9.jpg' %}" alt="single-product">
+                                    <img class="secondary-img" src="{% static 'img/products/10.jpg' %}" alt="single-product">
+                                </a>
+                                <a href="#" class="quick_view" data-toggle="modal" data-target="#myModal" title="Quick View"><i class="lnr lnr-magnifier"></i></a>
+                            </div>
+                            <div class="pro-content">
+                                <div class="pro-info">
+                                    <h4><a href="product.html">Poly and Bark Vortex Side</a></h4>
+                                    <p><span class="price">$84.45</span></p>
+                                </div>
+                                <div class="pro-actions">
+                                    <div class="actions-primary">
+                                        <a href="cart.html" title="Add to Cart"> + Add To Cart</a>
+                                    </div>
+                                    <div class="actions-secondary">
+                                        <a href="compare.html" title="Compare"><i class="lnr lnr-sync"></i> <span>Add To Compare</span></a>
+                                        <a href="wishlist.html" title="WishList"><i class="lnr lnr-heart"></i> <span>Add to WishList</span></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="single-product">
+                            <div class="pro-img">
+                                <a href="product.html">
+                                    <img class="primary-img" src="{% static 'img/products/11.jpg' %}" alt="single-product">
+                                    <img class="secondary-img" src="{% static 'img/products/12.jpg' %}" alt="single-product">
+                                </a>
+                                <a href="#" class="quick_view" data-toggle="modal" data-target="#myModal" title="Quick View"><i class="lnr lnr-magnifier"></i></a>
+                            </div>
+                            <div class="pro-content">
+                                <div class="pro-info">
+                                    <h4><a href="product.html">Poly and Bark Vortex Side</a></h4>
+                                    <p><span class="price">$84.45</span></p>
+                                </div>
+                                <div class="pro-actions">
+                                    <div class="actions-primary">
+                                        <a href="cart.html" title="Add to Cart"> + Add To Cart</a>
+                                    </div>
+                                    <div class="actions-secondary">
+                                        <a href="compare.html" title="Compare"><i class="lnr lnr-sync"></i> <span>Add To Compare</span></a>
+                                        <a href="wishlist.html" title="WishList"><i class="lnr lnr-heart"></i> <span>Add to WishList</span></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="single-product">
+                            <div class="pro-img">
+                                <a href="product.html">
+                                    <img class="primary-img" src="{% static 'img/products/3.jpg' %}" alt="single-product">
+                                    <img class="secondary-img" src="{% static 'img/products/4.jpg' %}" alt="single-product">
+                                </a>
+                                <a href="#" class="quick_view" data-toggle="modal" data-target="#myModal" title="Quick View"><i class="lnr lnr-magnifier"></i></a>
+                            </div>
+                            <div class="pro-content">
+                                <div class="pro-info">
+                                    <h4><a href="product.html">Poly and Bark Vortex Side</a></h4>
+                                    <p><span class="price">$84.45</span></p>
+                                </div>
+                                <div class="pro-actions">
+                                    <div class="actions-primary">
+                                        <a href="cart.html" title="Add to Cart"> + Add To Cart</a>
+                                    </div>
+                                    <div class="actions-secondary">
+                                        <a href="compare.html" title="Compare"><i class="lnr lnr-sync"></i> <span>Add To Compare</span></a>
+                                        <a href="wishlist.html" title="WishList"><i class="lnr lnr-heart"></i> <span>Add to WishList</span></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="electronics2" class="tab-pane fade show active">
+                    <div class="best-seller-pro-active owl-carousel">
+                        <div class="single-product">
+                            <div class="pro-img">
+                                <a href="product.html">
+                                    <img class="primary-img" src="{% static 'img/products/17.jpg' %}" alt="single-product">
+                                    <img class="secondary-img" src="{% static 'img/products/18.jpg' %}" alt="single-product">
+                                </a>
+                                <a href="#" class="quick_view" data-toggle="modal" data-target="#myModal" title="Quick View"><i class="lnr lnr-magnifier"></i></a>
+                            </div>
+                            <div class="pro-content">
+                                <div class="pro-info">
+                                    <h4><a href="product.html">Flos Chasen S2 Suspension</a></h4>
+                                    <p><span class="price">$84.45</span></p>
+                                </div>
+                                <div class="pro-actions">
+                                    <div class="actions-primary">
+                                        <a href="cart.html" title="Add to Cart"> + Add To Cart</a>
+                                    </div>
+                                    <div class="actions-secondary">
+                                        <a href="compare.html" title="Compare"><i class="lnr lnr-sync"></i> <span>Add To Compare</span></a>
+                                        <a href="wishlist.html" title="WishList"><i class="lnr lnr-heart"></i> <span>Add to WishList</span></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="single-product">
+                            <div class="pro-img">
+                                <a href="product.html">
+                                    <img class="primary-img" src="{% static 'img/products/19.jpg' %}" alt="single-product">
+                                    <img class="secondary-img" src="{% static 'img/products/20.jpg' %}" alt="single-product">
+                                </a>
+                                <a href="#" class="quick_view" data-toggle="modal" data-target="#myModal" title="Quick View"><i class="lnr lnr-magnifier"></i></a>
+                            </div>
+                            <div class="pro-content">
+                                <div class="pro-info">
+                                    <h4><a href="product.html">Country Squire Florist</a></h4>
+                                    <p><span class="price">$84.45</span></p>
+                                </div>
+                                <div class="pro-actions">
+                                    <div class="actions-primary">
+                                        <a href="cart.html" title="Add to Cart"> + Add To Cart</a>
+                                    </div>
+                                    <div class="actions-secondary">
+                                        <a href="compare.html" title="Compare"><i class="lnr lnr-sync"></i> <span>Add To Compare</span></a>
+                                        <a href="wishlist.html" title="WishList"><i class="lnr lnr-heart"></i> <span>Add to WishList</span></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="single-product">
+                            <div class="pro-img">
+                                <a href="product.html">
+                                    <img class="primary-img" src="{% static 'img/products/20.jpg' %}" alt="single-product">
+                                    <img class="secondary-img" src="{% static 'img/products/21.jpg' %}" alt="single-product">
+                                </a>
+                                <a href="#" class="quick_view" data-toggle="modal" data-target="#myModal" title="Quick View"><i class="lnr lnr-magnifier"></i></a>
+                            </div>
+                            <div class="pro-content">
+                                <div class="pro-info">
+                                    <h4><a href="product.html">Concord Fabric Single</a></h4>
+                                    <p><span class="price">$84.45</span></p>
+                                </div>
+                                <div class="pro-actions">
+                                    <div class="actions-primary">
+                                        <a href="cart.html" title="Add to Cart"> + Add To Cart</a>
+                                    </div>
+                                    <div class="actions-secondary">
+                                        <a href="compare.html" title="Compare"><i class="lnr lnr-sync"></i> <span>Add To Compare</span></a>
+                                        <a href="wishlist.html" title="WishList"><i class="lnr lnr-heart"></i> <span>Add to WishList</span></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="single-product">
+                            <div class="pro-img">
+                                <a href="product.html">
+                                    <img class="primary-img" src="{% static 'img/products/21.jpg' %}" alt="single-product">
+                                    <img class="secondary-img" src="{% static 'img/products/22.jpg' %}" alt="single-product">
+                                </a>
+                                <a href="#" class="quick_view" data-toggle="modal" data-target="#myModal" title="Quick View"><i class="lnr lnr-magnifier"></i></a>
+                            </div>
+                            <div class="pro-content">
+                                <div class="pro-info">
+                                    <h4><a href="product.html">Poly and Bark Vortex Side</a></h4>
+                                    <p><span class="price">$84.45</span></p>
+                                </div>
+                                <div class="pro-actions">
+                                    <div class="actions-primary">
+                                        <a href="cart.html" title="Add to Cart"> + Add To Cart</a>
+                                    </div>
+                                    <div class="actions-secondary">
+                                        <a href="compare.html" title="Compare"><i class="lnr lnr-sync"></i> <span>Add To Compare</span></a>
+                                        <a href="wishlist.html" title="WishList"><i class="lnr lnr-heart"></i> <span>Add to WishList</span></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="single-product">
+                            <div class="pro-img">
+                                <a href="product.html">
+                                    <img class="primary-img" src="{% static 'img/products/23.jpg' %}" alt="single-product">
+                                    <img class="secondary-img" src="{% static 'img/products/24.jpg' %}" alt="single-product">
+                                </a>
+                                <a href="#" class="quick_view" data-toggle="modal" data-target="#myModal" title="Quick View"><i class="lnr lnr-magnifier"></i></a>
+                            </div>
+                            <div class="pro-content">
+                                <div class="pro-info">
+                                    <h4><a href="product.html">Gpoly and Bark Eames Style</a></h4>
+                                    <p><span class="price">$84.45</span></p>
+                                </div>
+                                <div class="pro-actions">
+                                    <div class="actions-primary">
+                                        <a href="cart.html" title="Add to Cart"> + Add To Cart</a>
+                                    </div>
+                                    <div class="actions-secondary">
+                                        <a href="compare.html" title="Compare"><i class="lnr lnr-sync"></i> <span>Add To Compare</span></a>
+                                        <a href="wishlist.html" title="WishList"><i class="lnr lnr-heart"></i> <span>Add to WishList</span></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="single-product">
+                            <div class="pro-img">
+                                <a href="product.html">
+                                    <img class="primary-img" src="{% static 'img/products/24.jpg' %}" alt="single-product">
+                                    <img class="secondary-img" src="{% static 'img/products/25.jpg' %}" alt="single-product">
+                                </a>
+                                <a href="#" class="quick_view" data-toggle="modal" data-target="#myModal" title="Quick View"><i class="lnr lnr-magnifier"></i></a>
+                            </div>
+                            <div class="pro-content">
+                                <div class="pro-info">
+                                    <h4><a href="product.html">Vortex and Bark Vortex Side</a></h4>
+                                    <p><span class="price">$84.45</span></p>
+                                </div>
+                                <div class="pro-actions">
+                                    <div class="actions-primary">
+                                        <a href="cart.html" title="Add to Cart"> + Add To Cart</a>
+                                    </div>
+                                    <div class="actions-secondary">
+                                        <a href="compare.html" title="Compare"><i class="lnr lnr-sync"></i> <span>Add To Compare</span></a>
+                                        <a href="wishlist.html" title="WishList"><i class="lnr lnr-heart"></i> <span>Add to WishList</span></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="single-product">
+                            <div class="pro-img">
+                                <a href="product.html">
+                                    <img class="primary-img" src="{% static 'img/products/26.jpg' %}" alt="single-product">
+                                    <img class="secondary-img" src="{% static 'img/products/27.jpg' %}" alt="single-product">
+                                </a>
+                                <a href="#" class="quick_view" data-toggle="modal" data-target="#myModal" title="Quick View"><i class="lnr lnr-magnifier"></i></a>
+                            </div>
+                            <div class="pro-content">
+                                <div class="pro-info">
+                                    <h4><a href="product.html">Bark and Vortex Side</a></h4>
+                                    <p><span class="price">$84.45</span></p>
+                                </div>
+                                <div class="pro-actions">
+                                    <div class="actions-primary">
+                                        <a href="cart.html" title="Add to Cart"> + Add To Cart</a>
+                                    </div>
+                                    <div class="actions-secondary">
+                                        <a href="compare.html" title="Compare"><i class="lnr lnr-sync"></i> <span>Add To Compare</span></a>
+                                        <a href="wishlist.html" title="WishList"><i class="lnr lnr-heart"></i> <span>Add to WishList</span></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="single-product">
+                            <div class="pro-img">
+                                <a href="product.html">
+                                    <img class="primary-img" src="{% static 'img/products/28.jpg' %}" alt="single-product">
+                                    <img class="secondary-img" src="{% static 'img/products/29.jpg' %}" alt="single-product">
+                                </a>
+                                <a href="#" class="quick_view" data-toggle="modal" data-target="#myModal" title="Quick View"><i class="lnr lnr-magnifier"></i></a>
+                            </div>
+                            <div class="pro-content">
+                                <div class="pro-info">
+                                    <h4><a href="product.html">Electronic and Bark Vortex</a></h4>
+                                    <p><span class="price">$84.45</span></p>
+                                </div>
+                                <div class="pro-actions">
+                                    <div class="actions-primary">
+                                        <a href="cart.html" title="Add to Cart"> + Add To Cart</a>
+                                    </div>
+                                    <div class="actions-secondary">
+                                        <a href="compare.html" title="Compare"><i class="lnr lnr-sync"></i> <span>Add To Compare</span></a>
+                                        <a href="wishlist.html" title="WishList"><i class="lnr lnr-heart"></i> <span>Add to WishList</span></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

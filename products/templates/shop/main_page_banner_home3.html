@@ -1,0 +1,239 @@
+{% load static %}
+<div class="main-page-banner home-3">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-3 col-lg-4 d-none d-lg-block">
+                <div class="vertical-menu mb-all-30">
+                    <nav>
+                        <ul class="vertical-menu-list">
+                            {% for name in names %}
+                            <li><a href="{% url 'group_page' name.value %}"><span>
+                                {% if name.img %}
+                                <img src="{{ name.img.url }}" alt="menu-icon">
+                                {% else %}
+                                <img src="{% static 'img/vertical-menu/udochki.png' %}" alt="menu-icon">
+                                {% endif %}
+                            </span>{{name.value}}<i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                                <ul class="ht-dropdown mega-child">
+                                   {% for group in name.groups.all %}
+                                    <li><a href="{% url 'manufacturer_page' name.value group.name%}">{{group.name}}<i class="fa fa-angle-right"></i></a>
+                                        <ul class="ht-dropdown mega-child">
+                                            <li><a href="{% url 'manufacturer_page' name.value group.name%}"><h6>Производители</h6></a></li>
+                                            {% for i in group.manufacturer.all %}
+                                            <li><a href="{% url 'products_page' name.value group.name i.name_man%}">{{i.name_man}}</a></li>
+                                            {% endfor %}
+                                            
+                                        </ul>
+                                    </li>{% endfor %}
+                                </ul>
+                            </li> {% endfor %}
+                        {% comment "" %}<ul class="vertical-menu-list">
+                            <li class=""><a href="{% url 'group_page'%}"><span><img src="{% static 'img/vertical-menu/1.png' %}" alt="menu-icon"></span>Удилища<i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                                <ul class="ht-dropdown mega-child">
+                                    <li><a href="{% url 'manufacturer_page'%}">Маховые<i class="fa fa-angle-right"></i></a>
+                                        <ul class="ht-dropdown mega-child">
+                                            <li><a href="{% url 'manufacturer_page' %}"><h6>Производители</h6></a></li>
+                                            <li><a href="{% url 'products_page' %}">Mikado</a></li>
+                                            <li><a href="{% url 'products_page' %}">DOYO(ДоЮй)</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="shop.html">Болонские <i class="fa fa-angle-right"></i></a>
+                                        <ul class="ht-dropdown mega-child">
+                                            <li><a href="shop.html"><h6>Производители</h6></a></li>
+                                            <li><a href="shop.html">Mikado</a></li>
+                                            <li><a href="shop.html">DOYO(ДоЮй)</a></li>
+                                            <li><a href="shop.html">Shimano</a></li>
+                                        </ul>
+                                    </li>                                            
+                                    <li><a href="shop.html">Фидерные <i class="fa fa-angle-right"></i></a>
+                                        <ul class="ht-dropdown mega-child">
+                                            <li><a href="shop.html"><h6>Производители</h6></a></li>
+                                            <li><a href="shop.html">SuperHard</a></li>
+                                            <li><a href="shop.html">Kaida</a></li>
+                                            <li><a href="shop.html">Akara</a></li>
+                                            <li><a href="shop.html">Fish2fish</a></li>
+                                            <li><a href="shop.html">Волжанка</a></li>
+                                            <li><a href="shop.html">Flagman</a></li>
+                                            <li><a href="shop.html">Mikado</a></li>
+                                            <li><a href="shop.html">Condor</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="shop.html">Матчевые<i class="fa fa-angle-right"></i></a>
+                                        <ul class="ht-dropdown mega-child">
+                                                    <li><a href="shop.html"><h6>Производители</h6></a></li>
+                                                    <li><a href="shop.html">Kaida</a></li>
+                                                    <li><a href="shop.html">Flagman</a></li>
+                                                    <li><a href="shop.html">DOYO(ДоЮй)</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li><a href="shop.html"><span><img src="{% static 'img/vertical-menu/3.png' %}" alt="menu-icon"></span>Спиннинги<i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                                <ul class="ht-dropdown megamenu first-megamenu">
+                                    <li class="single-megamenu">
+                                        <ul>
+                                            <li class="menu-tile">Производители</li>
+                                            <li><a href="shop.html">Flagman</a></li>
+                                            <li><a href="shop.html">Akara</a></li>
+                                            <li><a href="shop.html">Shimano</a></li>
+                                            <li><a href="shop.html">DOYO(ДоЮй)</a></li>
+                                            <li><a href="shop.html">Kaida</a></li>
+                                            <li><a href="shop.html">Волжанка</a></li>
+                                            <li><a href="shop.html">Salmo</a></li>
+                                            <li><a href="shop.html">Lucky John</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li><a href="shop.html"><span><img src="{% static 'img/vertical-menu/6.png' %}" alt="menu-icon"></span>Катушки<i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                                <ul class="ht-dropdown megamenu megamenu-two">
+                                    <li class="single-megamenu">
+                                        <ul>
+                                            <li class="menu-tile">Производители</li>
+                                            <li><a href="shop.html">Ryobi</a></li>
+                                            <li><a href="shop.html">Flagman</a></li>
+                                            <li><a href="shop.html">FeederConcept</a></li>
+                                            <li><a href="shop.html">Condor</a></li>
+                                            <li><a href="shop.html">Fish2fish</a></li>
+                                            <li><a href="shop.html">DOYO(ДоЮй)</a></li>
+                                            <li><a href="shop.html">CT200</a></li>
+                                            <li><a href="shop.html">Cobra</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li><a href="shop.html"><span><img src="{% static 'img/vertical-menu/7.png' %}" alt="menu-icon"></span>Приманки спиннинговые<i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                                <ul class="ht-dropdown mega-child">
+                                    <li><a href="shop.html">Воблеры<i class="fa fa-angle-right"></i></a>
+                                        <ul class="ht-dropdown mega-child">
+                                            <li><a href="shop.html"><h6>Производители</h6></a></li>
+                                            <li><a href="shop.html">Akara</a></li>
+                                            <li><a href="shop.html">Lucky John</a></li>
+                                            <li><a href="shop.html">Rapala</a></li>
+                                            <li><a href="shop.html">Strike Pro</a></li>
+                                            <li><a href="shop.html">Flagman</a></li>
+                                            <li><a href="shop.html">Kosadaka</a></li>
+                                            <li><a href="shop.html">Seveida</a></li>
+                                            <li><a href="shop.html">Pontoon 21</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="shop.html">Силикон<i class="fa fa-angle-right"></i></a>
+                                        <ul class="ht-dropdown mega-child">
+                                            <li><a href="shop.html"><h6>Производители</h6></a></li>
+                                            <li><a href="shop.html">Lucky John</a></li>
+                                            <li><a href="shop.html">Relax</a></li>
+                                            <li><a href="shop.html">RVR</a></li>
+                                            <li><a href="shop.html">Fish Magnet</a></li>
+                                            <li><a href="shop.html">Crazy Fish</a></li>
+                                            <li><a href="shop.html">Fish Killer</a></li>
+                                            <li><a href="shop.html">Akara</a></li>
+                                            <li><a href="shop.html">Fanatic</a></li>
+                                        </ul>
+                                    </li>                                            
+                                    <li><a href="shop.html">Блесна<i class="fa fa-angle-right"></i></a>
+                                        <ul class="ht-dropdown mega-child">
+                                            <li><a href="shop.html"><h6>Производители</h6></a></li>
+                                            <li><a href="shop.html">Mepps</a></li>
+                                            <li><a href="shop.html">Lucky John</a></li>
+                                            <li><a href="shop.html">Akara</a></li>
+                                            <li><a href="shop.html">Пролив</a></li>
+                                            <li><a href="shop.html">Kosadaka</a></li>
+                                            <li><a href="shop.html">Fish Magnet</a></li>
+                                            <li><a href="shop.html">Seveida</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="shop.html">Поролоновые рыбки<i class="fa fa-angle-right"></i></a>
+                                        <ul class="ht-dropdown mega-child">
+                                            <li><a href="shop.html"><h6>Производители</h6></a></li>
+                                            <li><a href="shop.html">Контакт</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li><a href="shop.html"><span><img src="{% static 'img/vertical-menu/4.png' %}" alt="menu-icon"></span>Лески<i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                                <ul class="ht-dropdown mega-child">
+                                    <li><a href="shop.html">Монофильные<i class="fa fa-angle-right"></i></a>
+                                        <ul class="ht-dropdown mega-child">
+                                            <li><a href="shop.html"><h6>Производители</h6></a></li>
+                                            <li><a href="shop.html">Flagman</a></li>
+                                            <li><a href="shop.html">Волжанка</a></li>
+                                            <li><a href="shop.html">Salmo</a></li>
+                                            <li><a href="shop.html">Kaida</a></li>
+                                            <li><a href="shop.html">Stealth Line 3d</a></li>
+                                            <li><a href="shop.html">NylStar</a></li>
+                                            <li><a href="shop.html">Akara</a></li>
+                                            <li><a href="shop.html">Nisus</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="shop.html">Флуорокарбон<i class="fa fa-angle-right"></i></a>
+                                        <ul class="ht-dropdown mega-child">
+                                            <li><a href="shop.html"><h6>Производители</h6></a></li>
+                                            <li><a href="shop.html">Flagman</a></li>
+                                            <li><a href="shop.html">Azura</a></li>
+                                            <li><a href="shop.html">Lucky John</a></li>
+                                            <li><a href="shop.html">Salmo</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li><a href="shop.html"><span><img src="{% static 'img/vertical-menu/6.png' %}" alt="menu-icon"></span>Плетенки(шнуры)<i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                                <ul class="ht-dropdown megamenu megamenu-two">
+                                    <li class="single-megamenu">
+                                        <ul>
+                                            <li class="menu-tile">Gaming Desktops</li>
+                                            <li><a href="shop.html">Alpha Desktop</a></li>
+                                            <li><a href="shop.html">rober Desktop</a></li>
+                                            <li><a href="shop.html">Ultra Desktop </a></li>
+                                            <li><a href="shop.html">beta desktop</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class=""><a href="shop.html"><span><img src="{% static 'img/vertical-menu/1.png' %}" alt="menu-icon"></span>Крючки<i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                                <ul class="ht-dropdown mega-child">
+                                    <li><a href="shop.html">Одинарные<i class="fa fa-angle-right"></i></a>
+                                        <ul class="ht-dropdown mega-child">
+                                            <li><a href="shop.html"><h6>Производители</h6></a></li>
+                                            <li><a href="shop.html">Mikado</a></li>
+                                            <li><a href="shop.html">DOYO(ДоЮй)</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="shop.html">Двойные<i class="fa fa-angle-right"></i></a>
+                                        <ul class="ht-dropdown mega-child">
+                                            <li><a href="shop.html"><h6>Производители</h6></a></li>
+                                            <li><a href="shop.html">Mikado</a></li>
+                                            <li><a href="shop.html">DOYO(ДоЮй)</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="shop.html">Тройники<i class="fa fa-angle-right"></i></a>
+                                        <ul class="ht-dropdown mega-child">
+                                            <li><a href="shop.html"><h6>Производители</h6></a></li>
+                                            <li><a href="shop.html">Mikado</a></li>
+                                            <li><a href="shop.html">DOYO(ДоЮй)</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>    
+
+                            <li><a href="shop.html"><span><img src="{% static 'img/vertical-menu/8.png' %}" alt="menu-icon"></span>Аксессуары для спиннинга</a></li>
+                            <li><a href="shop.html"><span><img src="{% static 'img/vertical-menu/9.png' %}" alt="menu-icon"></span>Аксессуары для фидера</a></li>
+                            <li><a href="shop.html"><span><img src="{% static 'img/vertical-menu/10.png' %}" alt="menu-icon"></span>Аксессуары для удочки</a></li>
+                            <li><a href="shop.html"><span><img src="{% static 'img/vertical-menu/10.png' %}" alt="menu-icon"></span>Зимняя рыбалка</a></li>
+                            <li id="cate-toggle" class="category-menu v-cat-menu">
+                                <ul>
+                                    <li class="has-sub"><a href="#">Все категории</a>
+                                        <ul class="category-sub">
+                                            <li><a href="shop.html"><span><img src="{% static 'img/vertical-menu/11.png' %}" alt="menu-icon"></span>Одежда</a></li>
+                                            <li><a href="shop.html"><span><img src="{% static 'img/vertical-menu/11.png' %}" alt="menu-icon"></span>Коробки, ящики, тубусы</a></li>
+                                            <li><a href="shop.html"><span><img src="{% static 'img/vertical-menu/11.png' %}" alt="menu-icon"></span>Термосы</a></li>
+                                            <li><a href="shop.html"><span><img src="{% static 'img/vertical-menu/11.png' %}" alt="menu-icon"></span>Разное</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>{% endcomment %}
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>         
+</div>

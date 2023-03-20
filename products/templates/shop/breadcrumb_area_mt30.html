@@ -1,0 +1,10 @@
+<div class="breadcrumb-area mt-30">
+    <div class="container">
+        <div class="breadcrumb">
+            <ul class="d-flex align-items-center">
+                <li><a href="{% url 'home_page' %}">Главная</a></li>
+                <li class="active"><a href="{% url 'group_page' current %}">{{current}}</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
