@@ -20,7 +20,11 @@
                                 {% with product=el.product %}
                             <tr>
                                 <td class="product-thumbnail">
+                                    {% if el.products.img %}
+                                    <a href="#"><img src="{{el.products.img.url}}" alt="cart-image" /></a>
+                                    {% else %}
                                     <a href="#"><img src="{% static 'img/products/13.jpg' %}" alt="cart-image" /></a>
+                                    {% endif %}
                                     </td>
                                     <td class="product-name"><a href="#">{{el.products.product_name}}</a></td>
                                     <td class="product-price"><span class="amount">{{el.price}}</span></td>

@@ -49,7 +49,7 @@ class Order(models.Model):
         blank=True,
     )
     delivery_type = models.CharField(
-        max_length=1, choices=DELIVERY_CHOISES, default="B"
+        max_length=10
     )
 
     def __str__(self):

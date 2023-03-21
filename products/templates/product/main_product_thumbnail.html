@@ -47,20 +47,23 @@
                             <div class="rating">
                                 <i class="fa fa-star"></i>
                                 <i class="fa fa-star"></i>
-                                <i class="fa fa-star-o"></i>
-                                <i class="fa fa-star-o"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
                                 <i class="fa fa-star-o"></i>
                             </div>
-                            <div class="rating-feedback">
+                            {% comment "" %}<div class="rating-feedback">
                                 <a href="#">(1 review)</a>
                                 <a href="#">add to your review</a>
-                            </div>
+                            </div>{% endcomment %}
                         </div>
                         <div class="pro-price mtb-30">
-                            <p class="d-flex align-items-center"><span class="prev-price">{{el.price}}</span><span class="price">{{el.price}}</span><span class="saving-price">save 8%</span></p>
+                            <p class="d-flex align-items-center">
+                                {% comment "" %}<span class="prev-price">{{el.price}}</span>{% endcomment %}
+                                <span class="price">{{el.price}} BYN</span>
+                                {% comment "" %}<span class="saving-price">save 8%</span></p>{% endcomment %}
                         </div>
                         <p class="mb-20 pro-desc-details">{{el.description}}</p>
-                        <div class="product-size mb-20 clearfix">
+                        {% comment "" %}<div class="product-size mb-20 clearfix">
                             <label>Size</label>
                             <select class="">
                               <option>S</option>
@@ -78,7 +81,7 @@
                                     <a class="paste" href="#"></a>
                                 </li>
                             </ul>
-                        </div>
+                        </div>{% endcomment %}
                         
                         <div class="box-quantity d-flex hot-product2">
                             {% comment "" %}<form action="" method='post'>                                
@@ -87,19 +90,19 @@
                             <div class="pro-actions">
                                 <div class="actions-primary">
                                     <form action="{% url 'cart_add' el.id%}" method='post', title="В корзину">
-                                        {{cart_form}}
                                         {% csrf_token %}
+                                        {{cart_form}}
                                         <input type='submit' value="В корзину">
                                     </form>
                                 </div>
-                                <div class="actions-secondary">
+                                {% comment "" %}<div class="actions-secondary">
                                     <a href="compare.html" title="" data-original-title="Compare"><i class="lnr lnr-sync"></i> <span>Add To Compare</span></a>
                                     <a href="wishlist.html" title="" data-original-title="WishList"><i class="lnr lnr-heart"></i> <span>Add to WishList</span></a>
-                                </div>
+                                </div>{% endcomment %}
                             </div>
                         </div>
                         <div class="pro-ref mt-20">
-                            <p><span class="in-stock"><i class="ion-checkmark-round"></i> IN STOCK</span></p>
+                            <p><span class="in-stock"><i class="ion-checkmark-round"></i>В наличии: {{el.amount}}</span></p>
                         </div>
                         <div class="socila-sharing mt-25">
                             <ul class="d-flex">

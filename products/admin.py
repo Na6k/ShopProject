@@ -9,12 +9,12 @@ class NamesAdmin(admin.ModelAdmin):
 
 @admin.register(Group)
 class GroupAdmin(admin.ModelAdmin):
-    list_display = ["name"]
+    list_display = ["name", 'img']
 
 
 @admin.register(Manufacturer)
 class ManufacturerAdmin(admin.ModelAdmin):
-    list_display = ["name_man"]
+    list_display = ["name_man", "img"]
 
 
 @admin.register(Image)
@@ -25,6 +25,5 @@ class ImageAdmin(admin.ModelAdmin):
 @admin.register(Products)
 class ProductsAdmin(admin.ModelAdmin):
     list_display = ["product_name", "description", "price", "amount"]
-
 
 # Register your models here.

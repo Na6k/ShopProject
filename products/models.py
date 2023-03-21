@@ -37,8 +37,8 @@ class Names(models.Model):
     id = models.BigAutoField(primary_key=True)
     value = models.CharField(max_length=100)
     type = models.CharField(max_length=3)
-    img = models.ImageField(upload_to="image/%Y/%m/%d/", null=True)
-    groups = models.ManyToManyField(Group)
+    img = models.ImageField(upload_to="image/%Y/%m/%d/", null=True, blank=True)
+    groups = models.ManyToManyField(Group, blank=True)
     # slug = models.SlugField(max_length=100,unique=True)
 
     def __str__(self):
@@ -74,8 +74,8 @@ class Products(models.Model):
     manufacturer = models.ForeignKey(
         Manufacturer, models.DO_NOTHING, related_name="manufacturer_id"
     )
-    img = models.ImageField(upload_to="image/product/%Y", null=True)
-    images = models.ManyToManyField(Image)
+    img = models.ImageField(upload_to="image/product/%Y", null=True, blank=True)
+    images = models.ManyToManyField(Image, blank=True)
 
     def __str__(self):
         return self.product_name

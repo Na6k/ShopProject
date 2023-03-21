@@ -51,6 +51,7 @@ def checkout_page(request):
         if form.is_valid():
             customer = form.save()
             comment = form.cleaned_data["comment_to_order"]
+            delivery_types = form.cleaned_data["delivery_type"]
 
             for item in cart:
                 Order.objects.create(
@@ -58,6 +59,7 @@ def checkout_page(request):
                     product=item["products"],
                     price=(Decimal(item["price"])),
                     quantity=item["quantity"],
+                    delivery_type= delivery_types
                 )
             cart.clear()  # очистка корзины
             order_create.delay(customer.id, comment)

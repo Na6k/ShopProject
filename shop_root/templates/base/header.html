@@ -89,7 +89,11 @@
                                             {% with product as el.product %}
                                         <div class="single-cart-box">
                                             <div class="cart-img">
+                                                {% if el.products.img %}
+                                                <a href="#"><img src="{{el.products.img.url}}" alt="cart-image"></a>
+                                                {% else %}
                                                 <a href="#"><img src="{% static 'img/products/1.jpg' %}" alt="cart-image"></a>
+                                                {% endif %}
                                                 {%comment%}<span class="pro-quantity">{{el.quantity}}</span>{% endcomment %}
                                             </div>
                                             <div class="cart-content">
@@ -119,11 +123,9 @@
                                 </ul>
                             </li>
                             {% comment "" %}<li><a href="#"><i class="lnr lnr-heart"></i><span class="my-cart"><span>Wish</span><span>list (0)</span></span></a>
-                            </li>{% endcomment %}
+                            </li>
                             <li><a href="#"><i class="lnr lnr-user"></i><span class="my-cart"><span> <strong>Sign in</strong> Or</span><span> Join My Site</span></span></a>
-
-
-
+                            {% endcomment %}
                             </li>
                         </ul>
                     </div>

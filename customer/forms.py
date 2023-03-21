@@ -2,6 +2,19 @@ from .models import Customer
 from django import forms
 
 
+
+DELIVERY_1 = "B"  # Delivery tupe : BelPost
+DELIVERY_2 = "E"  # Delivery tupe : EuroPost
+DELIVERY_3 = "S"  # Delivery tupe : SDEC
+DELIVERY_4 = "P"  # Delivery tupe : Pickup
+DELIVERY_CHOISES = [
+        (DELIVERY_1, "Белпочта"),
+        (DELIVERY_2, "Европочта"),
+        (DELIVERY_3, "СДЕК"),
+        (DELIVERY_4, "Самовывоз"),
+    ]
+
+
 class CustomerCreatedForm(forms.ModelForm):
     first_name = forms.CharField(
         max_length=20,
@@ -25,6 +38,7 @@ class CustomerCreatedForm(forms.ModelForm):
     )
 
     email = forms.EmailField(
+        required=False,
         widget=forms.EmailInput(
             attrs={"type": "email", "placeholder": "Enter email address"},
         ),
@@ -85,6 +99,8 @@ class CustomerCreatedForm(forms.ModelForm):
             },
         ),
     )
+
+    delivery_type = forms.ChoiceField(choices=DELIVERY_CHOISES, widget=forms.Select(attrs={'class':'wide'}))
 
     class Meta:
         model = Customer

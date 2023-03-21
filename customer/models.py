@@ -27,5 +27,4 @@ class Customer(models.Model):
     def get_full_cost(self):
         return sum(item.get_cost() for item in self.items.all())
 
-
 # Create your models here.

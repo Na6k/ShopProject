@@ -16,7 +16,7 @@ def order_create(customer_id, comment):
     my_sent = send_mail(
         "New order",
         f"""{customer.first_name} {customer.last_name},
-                            сделал заказ № {customer_id}, мобильный {customer.phone},
+                            сделал заказ id = {customer_id}, мобильный {customer.phone},
                             комментарий к заказу {comment}""",
         settings.EMAIL_HOST_USER,
         [settings.RECIPIENTS_EMAIL],

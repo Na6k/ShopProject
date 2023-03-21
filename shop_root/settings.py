@@ -14,9 +14,11 @@ from pathlib import Path
 import os
 from dotenv import load_dotenv, find_dotenv
 
+
+
+load_dotenv(find_dotenv())
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
@@ -26,35 +28,23 @@ SECRET_KEY = os.getenv("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-
 ALLOWED_HOSTS = []
 
 # setting request.session
 ORDER_SESSION_ID = "order"
 
-
 # CELERY_BROKER_URL = "amqp://myuser:mypassword@localhost:5672/myvhost"
-# DEFAULT_FROM_EMAIL = 'labanau.python.dev@gmail.com'
 # EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-
-load_dotenv(find_dotenv())
 
 EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
 EMAIL_HOST = "smtp.gmail.com"
 EMAIL_USE_TLS = True
 EMAIL_PORT = 587
-EMAIL_HOST_USER = "lanabau.python.dev@gmail.com"
-
+EMAIL_HOST_USER = os.getenv("EMAIL_HOST_USER")
 EMAIL_HOST_PASSWORD = os.getenv("EMAIL_HOST_PASSWORD")
-
-RECIPIENTS_EMAIL = "lanabau.python.dev@gmail.com"
-
-# SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = os.getenv("SOCIAL_AUTH_GOOGLE_OAUTH2_KEY")
-# SOCIAL_AUTH_GOOGLE_OAUTH2_KEY_SECRET = os.getenv('SOCIAL_AUTH_GOOGLE_OAUTH2_KEY_SECRET')
-
+RECIPIENTS_EMAIL = os.getenv("RECIPIENTS_EMAIL")
 
 # Application definition
-
 INSTALLED_APPS = [
     "django.contrib.admin",
     "django.contrib.auth",
@@ -108,8 +98,8 @@ DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
         "NAME": "shop_db",
-        "USER": "tinka",
-        "PASSWORD": "tinkatinka",
+        "USER": os.getenv("USER_DATABASE"),
+        "PASSWORD": os.getenv("PASSWORD_DATABASE"),
         "HOST": "127.0.0.1",
         "PORT": "5432",
     }
